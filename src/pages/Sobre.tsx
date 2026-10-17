@@ -17,7 +17,7 @@ const timeline = [
   { year: "2011", title: "Início da Jornada", desc: "Primeiros passos no desenvolvimento web e design." },
   { year: "2015", title: "Especialização FullStack", desc: "Domínio de stacks modernas e arquiteturas distribuídas." },
   { year: "2023", title: "Foco em IA & SaaS", desc: "Lançamento do primeiro SaaS e imersão total em Machine Learning." },
-  { year: "2025", title: "Ogiva Digital", desc: "Liderando a revolução da IA com soluções de alto nível." },
+  { year: "2025", title: "Tetraval", desc: "Liderando a revolução da IA com soluções de alto nível." },
   { year: "2026", title: "Top 50 Brasil", desc: "Reconhecimento como um dos principais desenvolvedores do país." },
 ];
 

@@ -131,7 +131,7 @@ export default function Hero() {
               className="flex absolute top-2 left-2 lg:top-10 lg:-left-4 px-3 py-1.5 lg:px-5 lg:py-2.5 rounded-full border border-fuchsia-400/35 bg-fuchsia-500/15 backdrop-blur-md text-fuchsia-100 text-[9px] lg:text-[11px] font-black uppercase tracking-wider items-center gap-2 lg:gap-3 shadow-[0_0_22px_rgba(217,70,239,0.22)] z-20"
             >
               <img src={logoTetraval} alt="Logo Tetraval" className="w-5 h-5 object-contain" />
-              <span>CEO da Tetraval</span>
+              <span>Sócio Tetraval</span>
             </motion.div>
             <motion.div
               animate={{ y: [0, 6, 0] }}

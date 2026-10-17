@@ -9,6 +9,7 @@ import imagemProjetoOgiva from "@/src/images/projetos/ogiva.jpg";
 import imagemProjetoLojistaApple from "@/src/images/projetos/lojista-apple.jpg";
 import imagemProjetoPostoSujo from "@/src/images/projetos/postosujo.jpg";
 import imagemProjetoProclub from "@/src/images/projetos/proclub.jpg";
+import imagemProjetoProclubApp from "@/src/images/projetos/proclubapp.jpg";
 
 type Projeto = {
   title: string;
@@ -59,12 +60,21 @@ const projetos: Projeto[] = [
     link: "https://postosujo.com.br"
   },
   {
-    title: "ProClub",
-    category: "Saas / Gestão de Clubes",
+    title: "ProClub Federações",
+    category: "Produto / Gestão de Clubes",
     desc: "Plataforma de gestão para clubes esportivos, com funcionalidades de agendamento, comunicação e análise de desempenho.",
     tags: ["TypeScript", "React", "Next.js", "AWS", "Redis", "PostgreSQL"],
-    stats: { users: "350k+", growth: "+40%" },
+    stats: { users: "50k+", growth: "+40%" },
     image: imagemProjetoProclub,
+    link: "https://tetraval.com.br"
+  },
+  {
+    title: "ProClub App",
+    category: "Saas / Aplicativo",
+    desc: "Plataforma para personais trainers, alunos e atletas de alto desempenho.",
+    tags: ["TypeScript", "React", "Next.js", "AWS", "Redis", "MySQL / SQLite"],
+    stats: { users: "350k+", growth: "+70%" },
+    image: imagemProjetoProclubApp,
     link: "https://proclub.com.br"
   }
 ];

@@ -5,7 +5,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import barberonLogo from "@/src/images/barberon.png";
 import lojistaAppleLogo from "@/src/images/lojistaapple.png";
 import teuautoLogo from "@/src/images/teuauto.png";
-import proclubLogo from "@/src/images/proclub.png";
+import proclubLogo from "@/src/images/proclubapp.png";
 import obsidianoLogo from "@/src/images/obsidiano.png";
 
 const saasCompanies = [
@@ -38,11 +38,11 @@ const saasCompanies = [
   },
   {
     name: "ProClub",
-    desc: "Sistema on-Demand de gestão para federações esportivas.",
+    desc: "Plataforma para personais de fitness com inteligência artificial.",
     logo: proclubLogo,
     link: "https://proclub.com.br",
     color: "from-emerald-500 to-teal-500",
-    stats: "Grandes parceiros",
+    stats: "100k acessos/dia",
     tag: "On-Demand"
   },
   {
