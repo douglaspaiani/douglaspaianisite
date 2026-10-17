@@ -68,6 +68,19 @@ export default function Aplicacao({ enderecoInicial, contextoMetadados }: Propri
           <Route path="/termos" element={<Termos />} />
           <Route path="*" element={<PaginaNaoEncontrada />} />
         </Routes></Suspense>
+        <div className="flex justify-center bg-black px-6 py-10">
+          <a href="https://usagescope.com" className="w-full max-w-[320px] rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400">
+            <img
+              src="https://api.usagescope.com/v1/badge/p_2cd9cc6904114337ac5ddf6464d266fb.svg"
+              alt="Ranking UsageScope"
+              width="470"
+              height="247"
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full"
+            />
+          </a>
+        </div>
         <Footer />
       </div>
     </HelmetProvider>
