@@ -1,0 +1,12 @@
+# Douglas Paiani Site
+
+Site público estático, sem servidor de aplicação ou banco de dados.
+
+```bash
+npm install
+npm run dev
+```
+
+Para publicar, execute `npm run build` e envie o conteúdo da pasta `dist/` para uma hospedagem estática. Cada página possui seu próprio `index.html`, inclusive as rotas internas. Configure a hospedagem para servir os diretórios como páginas e manter os arquivos em `/assets/` acessíveis.
+
+O contato abre WhatsApp ou e-mail diretamente. As páginas do blog e a área administrativa não fazem parte deste projeto.
