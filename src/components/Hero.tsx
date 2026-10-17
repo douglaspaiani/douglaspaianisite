@@ -3,7 +3,9 @@ import { Sparkles, Brain, Code, Rocket, Cpu, Zap, Activity, Terminal } from "luc
 import MatrixRain from "@/src/components/MatrixRain";
 import { useState, useEffect, useMemo } from "react";
 import logoObsidiano from "@/src/images/obsidiano.png";
+import logoProclub from "@/src/images/proclubapp.png";
 import logoBarberon from "@/src/images/barberon.png";
+import logoTetraval from "@/src/images/tetraval.png";
 
 const logoOgiva = '/ogiva.png';
 
@@ -128,16 +130,16 @@ export default function Hero() {
               transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
               className="flex absolute top-2 left-2 lg:top-10 lg:-left-4 px-3 py-1.5 lg:px-5 lg:py-2.5 rounded-full border border-fuchsia-400/35 bg-fuchsia-500/15 backdrop-blur-md text-fuchsia-100 text-[9px] lg:text-[11px] font-black uppercase tracking-wider items-center gap-2 lg:gap-3 shadow-[0_0_22px_rgba(217,70,239,0.22)] z-20"
             >
-              <img src={logoOgiva} alt="Logo Ogiva" className="w-5 h-5 object-contain" />
-              <span>CEO da Ogiva Digital</span>
+              <img src={logoTetraval} alt="Logo Tetraval" className="w-5 h-5 object-contain" />
+              <span>CEO da Tetraval</span>
             </motion.div>
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
               className="flex absolute top-[56%] left-[58%] -translate-x-1/2 -translate-y-1/2 lg:left-[62%] px-3 py-1.5 lg:px-5 lg:py-2.5 rounded-full border border-emerald-400/35 bg-emerald-500/15 backdrop-blur-md text-emerald-100 text-[9px] lg:text-[11px] font-black uppercase tracking-wider items-center gap-2 lg:gap-3 shadow-[0_0_22px_rgba(16,185,129,0.2)] z-20"
             >
-              <img src={logoObsidiano} alt="Logo Obsidiano" className="w-5 h-5 object-contain" />
-              <span>Criador do Obsidiano</span>
+              <img src={logoProclub} alt="Logo Proclub" className="w-5 h-5 object-contain" />
+              <span>Criador do Proclub</span>
             </motion.div>
             <motion.div
               animate={{ y: [0, -5, 0] }}

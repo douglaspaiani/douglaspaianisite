@@ -331,7 +331,7 @@ export default function Inicio() {
               {[
                 "15 anos de experiência",
                 "+50 projetos internacionais",
-                "CEO da Ogiva Digital"
+                "CEO da Tetraval"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_14px_rgba(96,165,250,0.95)]" />
