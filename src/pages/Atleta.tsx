@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { motion, MotionConfig, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, MotionConfig, useReducedMotion } from "motion/react";
 import {
   ArrowDown,
   ArrowRight,
@@ -15,6 +15,7 @@ import {
   Dumbbell,
   Instagram,
   MapPin,
+  Menu,
   Megaphone,
   MonitorPlay,
   Plus,
@@ -31,6 +32,13 @@ import "./atleta.css";
 
 const endereçoPágina = "https://douglaspaiani.com.br/atleta";
 const endereçoWhatsapp = `https://wa.me/5551994727036?text=${encodeURIComponent("Olá, Douglas! Conheci sua página de atleta e quero conversar sobre uma parceria de sucesso com a minha marca.")}`;
+
+const itensMenuAtleta = [
+  { número: "01", título: "Sobre mim", destino: "#sobre-atleta" },
+  { número: "02", título: "Galeria", destino: "#galeria-atleta" },
+  { número: "03", título: "Federações", destino: "#federacoes-atleta" },
+  { número: "04", título: "Parceria", destino: "#parceria-atleta" },
+];
 
 const entregas = [
   {
@@ -360,6 +368,36 @@ function GaleriaAtleta() {
 }
 
 export default function Atleta() {
+  const [menuAtletaAberto, definirMenuAtletaAberto] = useState(false);
+  const botãoMenuAtleta = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuAtletaAberto) return;
+
+    const rolagemAnterior = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    // Fecha o painel por teclado ou ao voltar para o layout desktop.
+    function acompanharMenuAtleta(evento: KeyboardEvent) {
+      if (evento.key !== "Escape") return;
+      definirMenuAtletaAberto(false);
+      botãoMenuAtleta.current?.focus();
+    }
+
+    function acompanharLarguraAtleta() {
+      if (window.innerWidth >= 1024) definirMenuAtletaAberto(false);
+    }
+
+    window.addEventListener("keydown", acompanharMenuAtleta);
+    window.addEventListener("resize", acompanharLarguraAtleta);
+
+    return () => {
+      document.body.style.overflow = rolagemAnterior;
+      window.removeEventListener("keydown", acompanharMenuAtleta);
+      window.removeEventListener("resize", acompanharLarguraAtleta);
+    };
+  }, [menuAtletaAberto]);
+
   return (
     <MotionConfig reducedMotion="user">
       <div className="pagina-atleta min-h-screen bg-[#07110c] text-[#f4f3ef] selection:bg-[#16834a] selection:text-white">
@@ -432,7 +470,7 @@ export default function Atleta() {
           Pular para o conteúdo
         </a>
         <header className="atleta-cabeçalho border-b border-white/10">
-          <div className="atleta-container flex min-h-22 flex-wrap items-center justify-between gap-x-5 gap-y-3 py-4">
+          <div className="atleta-container hidden min-h-22 items-center justify-between gap-5 py-4 lg:flex">
             <a
               href="#inicio-atleta"
               aria-label="Douglas Paiani — início"
@@ -453,16 +491,17 @@ export default function Atleta() {
             </a>
             <nav
               aria-label="Navegação da página do atleta"
-              className="order-3 flex w-full justify-between gap-5 border-t border-white/10 pt-3 text-[10px] font-bold uppercase tracking-[0.12em] text-white/70 sm:order-0 sm:w-auto sm:justify-center sm:gap-7 sm:border-0 sm:pt-0"
+              className="flex items-center justify-center gap-7 text-[10px] font-bold uppercase tracking-[0.12em] text-white/70"
             >
-              <a href="#sobre-atleta">Sobre mim</a>
-              <a href="#galeria-atleta">Galeria</a>
-              <a href="#federacoes-atleta">Federações</a>
-              <a href="#parceria-atleta">Parceria</a>
+              {itensMenuAtleta.map((item) => (
+                <a key={item.destino} href={item.destino} className="transition hover:text-[#77e58f]">
+                  {item.título}
+                </a>
+              ))}
             </nav>
             <a
               href="#contato-atleta"
-              className="hidden items-center gap-3 text-xs font-bold sm:flex"
+              className="flex items-center gap-3 text-xs font-bold"
             >
               Seja parceiro{" "}
               <ArrowUpRight
@@ -472,7 +511,92 @@ export default function Atleta() {
               />
             </a>
           </div>
+          <div className="atleta-container atleta-cabeçalho-mobile grid grid-cols-[44px_1fr_44px] items-center lg:hidden">
+            <button
+              ref={botãoMenuAtleta}
+              type="button"
+              aria-label={menuAtletaAberto ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuAtletaAberto}
+              aria-controls="menu-navegacao-atleta"
+              onClick={() => definirMenuAtletaAberto((aberto) => !aberto)}
+              className="atleta-botão-menu"
+            >
+              {menuAtletaAberto ? <X size={23} aria-hidden="true" /> : <Menu size={23} aria-hidden="true" />}
+            </button>
+            <a
+              href="#inicio-atleta"
+              aria-label="Douglas Paiani — início"
+              onClick={() => definirMenuAtletaAberto(false)}
+              className="atleta-logo-mobile justify-self-center"
+            >
+              <img
+                src="/atleta/logo-douglas-atleta.webp"
+                alt=""
+                width="52"
+                height="52"
+                fetchPriority="high"
+                className="atleta-logotipo"
+              />
+            </a>
+            <a
+              href="#contato-atleta"
+              aria-label="Conversar sobre parceria"
+              onClick={() => definirMenuAtletaAberto(false)}
+              className="atleta-botão-menu atleta-atalho-parceria"
+            >
+              <ArrowUpRight size={22} aria-hidden="true" />
+            </a>
+          </div>
         </header>
+        <AnimatePresence>
+            {menuAtletaAberto && (
+              <motion.div
+                className="atleta-menu-camada lg:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.18 }}
+              >
+                <button
+                  type="button"
+                  className="atleta-menu-fundo"
+                  aria-label="Fechar menu"
+                  onClick={() => definirMenuAtletaAberto(false)}
+                />
+                <motion.nav
+                  id="menu-navegacao-atleta"
+                  aria-label="Navegação mobile da página do atleta"
+                  className="atleta-menu-painel"
+                  initial={{ y: -16, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -12, opacity: 0 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                >
+                  <p className="atleta-menu-sobretítulo">Explore a página</p>
+                  {itensMenuAtleta.map((item) => (
+                    <a
+                      key={item.destino}
+                      href={item.destino}
+                      onClick={() => definirMenuAtletaAberto(false)}
+                      className="atleta-menu-link"
+                    >
+                      <span>{item.número}</span>
+                      {item.título}
+                      <ArrowUpRight size={19} aria-hidden="true" />
+                    </a>
+                  ))}
+                  <a
+                    href="#contato-atleta"
+                    onClick={() => definirMenuAtletaAberto(false)}
+                    className="atleta-menu-contato"
+                  >
+                    Seja parceiro <ArrowUpRight size={20} aria-hidden="true" />
+                  </a>
+                  <p className="atleta-menu-rodapé">Disciplina para evoluir. Estratégia para crescer juntos.</p>
+                </motion.nav>
+              </motion.div>
+            )}
+        </AnimatePresence>
 
         <main id="conteudo-atleta">
           <section
@@ -867,7 +991,7 @@ export default function Atleta() {
             id="contato-atleta"
             className="atleta-contato relative overflow-hidden"
           >
-            <div className="atleta-container atleta-contato-conteúdo relative z-1 grid items-center gap-12 py-18 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.73fr)] lg:gap-20 lg:py-28">
+            <div className="atleta-container atleta-contato-conteúdo relative z-1 grid items-center gap-12 py-14 sm:py-18 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.73fr)] lg:gap-20 lg:py-28">
               <div className="atleta-contato-apresentação">
                 <p className="atleta-etiqueta atleta-contato-etiqueta">
                   <span aria-hidden="true" />O próximo passo é nosso.
@@ -936,7 +1060,7 @@ export default function Atleta() {
           </section>
         </main>
 
-        <footer className="atleta-container flex flex-wrap items-center justify-between gap-6 py-8">
+        <footer className="atleta-container flex flex-col items-center gap-5 py-8 text-center sm:flex-row sm:flex-wrap sm:justify-between sm:text-left">
           <a
             href="#inicio-atleta"
             className="inline-flex items-center"

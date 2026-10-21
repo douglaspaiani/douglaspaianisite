@@ -306,7 +306,7 @@ export default function Inicio() {
             <img
               src="/douglas-ia.webp"
               alt="Especialista em desenvolvimento e inteligência artificial"
-              className="relative z-10 w-[300px] md:w-[360px] lg:w-[400px] object-cover [clip-path:inset(0_2px_0_0)]"
+              className="relative z-10 h-auto w-full max-w-[300px] object-cover [clip-path:inset(0_2px_0_0)] md:max-w-[360px] lg:max-w-[400px]"
               loading="lazy"
             />
           </motion.div>

@@ -34,17 +34,17 @@ export default function Hero() {
   })), []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40 bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-28 pb-10 md:pt-40 md:pb-0">
       {/* AI Background Layers */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black" />
-        <div className="absolute inset-0 mix-blend-screen">
+        <div className="absolute inset-0 hidden mix-blend-screen md:block">
           <MatrixRain colorClass="text-blue-400" opacity="opacity-[0.18]" columns={34} />
         </div>
-        <div className="absolute inset-0 mix-blend-screen blur-[0.4px]">
+        <div className="absolute inset-0 hidden mix-blend-screen blur-[0.4px] md:block">
           <MatrixRain colorClass="text-cyan-300" opacity="opacity-[0.12]" columns={22} />
         </div>
-        <div className="absolute inset-0 mix-blend-screen">
+        <div className="absolute inset-0 hidden mix-blend-screen md:block">
           <MatrixRain colorClass="text-sky-300" opacity="opacity-[0.07]" columns={12} />
         </div>
 
@@ -55,17 +55,17 @@ export default function Hero() {
         <motion.div
           animate={{ opacity: [0.28, 0.6, 0.28], scale: [1, 1.05, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.22),transparent_60%)]"
+          className="absolute -top-24 left-1/2 hidden h-[60rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.22),transparent_60%)] md:block"
         />
         <motion.div
           animate={{ x: ["-15%", "15%", "-15%"], opacity: [0.08, 0.18, 0.08] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-12 left-0 w-[56rem] h-[24rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.2),transparent_65%)]"
+          className="absolute -bottom-12 left-0 hidden h-[24rem] w-[56rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.2),transparent_65%)] md:block"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
         
         {/* SVG Neural Network Background */}
-        <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
+        <svg className="absolute inset-0 hidden h-full w-full opacity-20 pointer-events-none md:block">
           <defs>
             <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="rgba(6,182,212,0.2)" />
@@ -156,7 +156,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-3 backdrop-blur-sm"
+              className="mb-3 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.08em] text-cyan-400 backdrop-blur-sm sm:gap-3 sm:px-4 sm:text-[10px] sm:tracking-[0.3em]"
             >
               <div className="relative flex items-center justify-center">
                 <Brain size={14} className="relative z-10" />
@@ -175,7 +175,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="mb-16"
+              className="mb-8 sm:mb-16"
             >
               <p className="text-xl md:text-4xl text-white/70 font-light leading-tight tracking-tight mb-4">
                 Vamos criar um projeto<br/><span className="text-white font-medium">incrível para o seu negócio?</span>
@@ -193,11 +193,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap gap-6"
+              className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6"
             >
               <a
                 href="#orcamento"
-                className="group relative px-12 py-5 bg-white text-black font-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                className="group relative flex w-full justify-center overflow-hidden rounded-full bg-white px-6 py-4 font-black text-black shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-300 hover:scale-105 active:scale-95 sm:w-auto sm:px-12 sm:py-5"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   INICIAR PROJETO <Zap size={20} className="fill-current" />
@@ -207,7 +207,7 @@ export default function Hero() {
               
               <a
                 href="#portfolio-saas"
-                className="group px-12 py-5 bg-transparent text-white font-bold rounded-full border border-white/10 hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-md flex items-center gap-2"
+                className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-transparent px-6 py-4 font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 sm:w-auto sm:px-12 sm:py-5"
               >
                 <Activity size={20} className="text-cyan-400 group-hover:animate-pulse" />
                 VER SISTEMAS
@@ -217,7 +217,7 @@ export default function Hero() {
         </div>
 
         {/* AI Stats Grid */}
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-3 sm:mt-14 sm:gap-8 md:grid-cols-4">
           {[
             { icon: Cpu, label: "Neural Processing", value: "99.9%", color: "text-cyan-400" },
             { icon: Brain, label: "AI Expertise", value: "Elite", color: "text-blue-400" },
@@ -229,13 +229,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
-              className="group flex flex-col items-center gap-4 p-8 rounded-[40px] bg-white/[0.02] border border-white/[0.05] hover:border-cyan-500/20 hover:bg-white/[0.04] transition-all duration-500"
+              className="group flex min-w-0 flex-col items-center gap-3 rounded-2xl border border-white/[0.05] bg-white/[0.02] p-4 transition-all duration-500 hover:border-cyan-500/20 hover:bg-white/[0.04] sm:gap-4 sm:rounded-[40px] sm:p-8"
             >
               <div className={`p-4 rounded-2xl bg-white/5 ${item.color} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                 <item.icon size={28} />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-black text-4xl tracking-tighter">{item.value}</span>
+                <span className="text-2xl font-black tracking-tighter text-white sm:text-4xl">{item.value}</span>
                 <span className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">{item.label}</span>
               </div>
             </motion.div>

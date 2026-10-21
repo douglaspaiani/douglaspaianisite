@@ -16,9 +16,9 @@ function IconeWhatsapp() {
 
 export default function Footer() {
   return (
-    <footer className="bg-black pt-24 pb-12 border-t border-white/5">
+    <footer className="border-t border-white/5 bg-black pt-14 pb-8 md:pt-24 md:pb-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-5 gap-12 mb-16">
+        <div className="mb-12 grid gap-8 md:mb-16 md:grid-cols-5 md:gap-12">
           <div className="col-span-2">
             <img
               src={logoPrincipal}
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:flex-row md:pt-12">
           <p className="text-white/20 text-xs uppercase tracking-widest font-bold text-center md:text-left">
             © 2026 Douglas Paiani. Todos os direitos reservados.
           </p>

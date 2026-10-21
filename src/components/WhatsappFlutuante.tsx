@@ -17,9 +17,9 @@ export default function WhatsappFlutuante() {
       rel="noopener noreferrer"
       aria-label="Conversar no WhatsApp"
       title="Conversar no WhatsApp"
-      className="fixed right-5 bottom-5 z-[80] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_0_24px_rgba(37,211,102,0.55)] hover:scale-105 active:scale-95 transition-all duration-300"
+      className="fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-[80] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_24px_rgba(37,211,102,0.55)] transition-all duration-300 hover:scale-105 active:scale-95 sm:right-5 sm:bottom-5"
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
+      <span className="absolute inset-0 hidden rounded-full bg-[#25D366] opacity-30 sm:block sm:animate-ping" />
       <span className="relative z-10">
         <IconeWhatsappOficial />
       </span>

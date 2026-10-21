@@ -97,7 +97,7 @@ function ItemNavegacaoDesktop({
         )}
       />
 
-      <span className="hidden md:inline tracking-tight">{item.name}</span>
+      <span className="hidden lg:inline tracking-tight">{item.name}</span>
 
       {item.dropdown && (
         <ChevronDown
@@ -227,6 +227,16 @@ export default function Navbar() {
     setSubmenuServicosMobileAberto(false);
   }, [location.pathname, location.hash]);
 
+  useEffect(() => {
+    // Ao girar um tablet para a largura de desktop, fecha o menu e libera a rolagem.
+    const consultaLargura = window.matchMedia("(min-width: 1024px)");
+    function fecharMenuEmTelaAmpla(evento: MediaQueryListEvent) {
+      if (evento.matches) setMenuMobileAberto(false);
+    }
+    consultaLargura.addEventListener("change", fecharMenuEmTelaAmpla);
+    return () => consultaLargura.removeEventListener("change", fecharMenuEmTelaAmpla);
+  }, []);
+
   const irParaOrcamento = () => {
     const elemento = document.getElementById("orcamento");
     if (elemento) {
@@ -252,7 +262,7 @@ export default function Navbar() {
     <>
       <nav
         className={cn(
-          "hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-2 rounded-full transition-all duration-500 items-center",
+          "hidden lg:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-2 rounded-full transition-all duration-500 items-center",
           scrolled
             ? "bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
             : "bg-white/5 backdrop-blur-md border border-white/5",
@@ -314,7 +324,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <nav className="md:hidden fixed top-4 left-4 right-4 z-50">
+      <nav className="lg:hidden fixed top-4 left-4 right-4 z-50">
         <div className="bg-black/70 backdrop-blur-2xl border border-white/10 rounded-2xl px-4 py-3 flex items-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
           <Link
             to="/"
@@ -330,7 +340,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMenuMobileAberto((estado) => !estado)}
-            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80"
             aria-label={menuMobileAberto ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuMobileAberto}
             aria-controls="menu-mobile-principal"
@@ -348,7 +358,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMenuMobileAberto(false)}
-              className="md:hidden fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
             />
 
             <motion.aside
@@ -357,12 +367,12 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 260, damping: 28 }}
-              className="md:hidden fixed top-0 right-0 bottom-0 z-50 w-[86%] max-w-[360px] bg-[#050505] border-l border-white/10 p-6 pt-24 overflow-y-auto"
+              className="fixed inset-y-0 right-0 z-50 w-[86%] max-w-[360px] overflow-y-auto border-l border-white/10 bg-[#050505] p-6 pt-24 pb-[calc(1.5rem+env(safe-area-inset-bottom))] lg:hidden"
             >
               <button
                 type="button"
                 onClick={() => setMenuMobileAberto(false)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 z-10"
+                className="absolute top-4 right-4 z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80"
                 aria-label="Fechar menu"
               >
                 <X size={20} />
