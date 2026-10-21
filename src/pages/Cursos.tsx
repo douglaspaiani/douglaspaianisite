@@ -37,7 +37,7 @@ const blocosDiferenciais = [
 ];
 
 const urlPaginaCursos = "https://douglaspaiani.com.br/cursos";
-const urlImagemSeoCursos = "https://douglaspaiani.com.br/douglas-paiani01.png";
+const urlImagemSeoCursos = "https://douglaspaiani.com.br/douglas-paiani-corrigido.webp";
 
 const dadosEstruturadosPaginaCursos = {
   "@context": "https://schema.org",

@@ -1,0 +1,1057 @@
+@font-face {
+  font-family: "Barlow Atleta";
+  src: url("/atleta/barlow-condensed-800.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+.pagina-atleta {
+  --altura-cabecalho-atleta: 88px;
+
+  color-scheme: dark;
+  padding-top: var(--altura-cabecalho-atleta);
+}
+.pagina-atleta .atleta-cabeçalho {
+  position: fixed;
+  z-index: 50;
+  inset: 0 0 auto;
+  min-height: var(--altura-cabecalho-atleta);
+  background: rgb(7 17 12 / 93%);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 32px #0005;
+}
+.pagina-atleta .atleta-cabeçalho > .atleta-container {
+  min-height: var(--altura-cabecalho-atleta);
+}
+.pagina-atleta .atleta-container {
+  width: min(1180px, calc(100% - 80px));
+  margin-inline: auto;
+}
+.pagina-atleta .atleta-seção {
+  padding-block: 100px;
+}
+.pagina-atleta :is(section[id], main[id]) {
+  scroll-margin-top: calc(var(--altura-cabecalho-atleta) + 20px);
+}
+.pagina-atleta .atleta-fonte,
+.pagina-atleta .atleta-título,
+.pagina-atleta .atleta-nome {
+  font-family: "Barlow Atleta", Impact, sans-serif;
+  font-weight: 800;
+}
+.pagina-atleta .atleta-logotipo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px #77e58f61, 0 9px 24px #0006;
+}
+.pagina-atleta .atleta-logotipo-rodapé {
+  width: 52px;
+  height: 52px;
+}
+.pagina-atleta .atleta-etiqueta {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.pagina-atleta .atleta-título {
+  font-size: clamp(40px, 4.4vw, 62px);
+  line-height: 1.03;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.pagina-atleta .atleta-nome {
+  font-size: clamp(92px, 10.5vw, 146px);
+  line-height: 0.85;
+  letter-spacing: -0.025em;
+}
+.pagina-atleta .atleta-nome > span {
+  color: #77e58f;
+}
+.pagina-atleta .atleta-hero {
+  background:
+    radial-gradient(ellipse at 77% 40%, #0d2b19, transparent 55%), #07110c;
+}
+.pagina-atleta .atleta-retrato {
+  min-height: 700px;
+  isolation: isolate;
+}
+.pagina-atleta .atleta-imagem-retrato {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.pagina-atleta .atleta-faixa-retrato {
+  position: absolute;
+  inset: 6% 17% 0 30%;
+  transform: skew(-12deg);
+  background: linear-gradient(160deg, #58d776, #0d6a38);
+}
+.pagina-atleta .atleta-letras-fundo {
+  position: absolute;
+  right: 4%;
+  top: 7%;
+  font:
+    800 410px/0.9 "Barlow Atleta",
+    Impact,
+    sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff14;
+  letter-spacing: -20px;
+}
+.pagina-atleta .atleta-retrato::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 70% 0 0;
+  background: linear-gradient(transparent, #07110c);
+  pointer-events: none;
+}
+.pagina-atleta .atleta-faixa {
+  background: #0d1b13;
+}
+.pagina-atleta .atleta-faixa svg {
+  color: #77e58f;
+}
+.pagina-atleta .atleta-botão {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 54px;
+  padding: 15px 23px;
+  background: #16834a;
+  border: 1px solid #2bc36e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.pagina-atleta .atleta-botão:hover {
+  background: #0f673b;
+  transform: translateY(-2px);
+}
+.pagina-atleta .atleta-botão-claro {
+  background: #f4f3ef;
+  border-color: #f4f3ef;
+  color: #0d1b13;
+}
+.pagina-atleta .atleta-botão-claro:hover {
+  background: #fff;
+}
+.pagina-atleta nav a,
+.pagina-atleta footer a {
+  transition: color 0.2s;
+}
+.pagina-atleta nav a:hover,
+.pagina-atleta footer a:hover {
+  color: #7dea9a;
+}
+.pagina-atleta :is(a, button):focus-visible {
+  outline: 2px solid #86f7a9;
+  outline-offset: 5px;
+}
+.pagina-atleta .atleta-contato a:focus-visible {
+  outline-color: #fff;
+}
+.pagina-atleta .atleta-sobre-seção {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 55% 65% at 4% 92%, #1b6c3524, transparent 70%),
+    #07110c;
+}
+.pagina-atleta .atleta-sobre-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
+  align-items: center;
+  gap: clamp(46px, 6vw, 90px);
+}
+.pagina-atleta .atleta-sobre-apresentação {
+  min-width: 0;
+}
+.pagina-atleta .atleta-sobre-visual {
+  position: relative;
+  width: min(100%, 480px);
+  height: 265px;
+  overflow: hidden;
+  margin-top: 42px;
+  border: 1px solid #77e58f52;
+  background: #142219;
+  box-shadow: 18px 18px 0 #12341f7a;
+}
+.pagina-atleta .atleta-sobre-visual::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, #061009d9);
+  pointer-events: none;
+}
+.pagina-atleta .atleta-sobre-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: grayscale(0.85) contrast(1.08);
+}
+.pagina-atleta .atleta-sobre-visual-legenda {
+  position: absolute;
+  z-index: 1;
+  bottom: 19px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-sobre-visual-legenda > span {
+  width: 25px;
+  height: 2px;
+  background: #77e58f;
+}
+.pagina-atleta .atleta-sobre-conteúdo {
+  position: relative;
+  min-width: 0;
+  padding: clamp(27px, 3.3vw, 44px);
+  border: 1px solid #ffffff1a;
+  background: linear-gradient(145deg, #12271a 0%, #0b1911 62%, #09150e);
+  box-shadow: 0 24px 70px #0003, inset 0 1px #ffffff09;
+}
+.pagina-atleta .atleta-sobre-conteúdo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: clamp(27px, 3.3vw, 44px);
+  width: 85px;
+  height: 3px;
+  background: #77e58f;
+}
+.pagina-atleta .atleta-sobre-abertura {
+  max-width: 29ch;
+  color: #f4f3ef;
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: 650;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+.pagina-atleta .atleta-sobre-narrativa {
+  margin-top: 34px;
+  border-top: 1px solid #ffffff21;
+}
+.pagina-atleta .atleta-sobre-bloco {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  gap: 18px;
+  padding-block: 22px;
+  border-bottom: 1px solid #ffffff17;
+}
+.pagina-atleta .atleta-sobre-bloco-número {
+  color: #77e58f;
+  font: 800 25px/1 "Barlow Atleta", Impact, sans-serif;
+}
+.pagina-atleta .atleta-sobre-bloco h3 {
+  color: #b5ebc2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-sobre-bloco p {
+  margin-top: 9px;
+  color: #b1c0b5;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.pagina-atleta .atleta-sobre-perfis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+.pagina-atleta .atleta-sobre-perfis > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid #77e58f38;
+  background: #77e58f0c;
+  color: #d1e8d6;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-sobre-perfis > span > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #77e58f;
+}
+.pagina-atleta .atleta-foto {
+  height: 470px;
+  border: 1px solid #ffffff15;
+  background: #102018;
+}
+.pagina-atleta .atleta-foto-retrato {
+  background: radial-gradient(ellipse at center, #173a26, #0d1b13 75%);
+}
+.pagina-atleta .atleta-federação {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding-inline: 12px;
+}
+.pagina-atleta .atleta-federação > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b4b4bb;
+}
+.pagina-atleta .atleta-diferenciais-seção {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 48% 68% at 100% 12%, #1f71342b, transparent 72%),
+    linear-gradient(135deg, #0a1a11, #0c2014 54%, #09180f);
+}
+.pagina-atleta .atleta-diferenciais-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: clamp(38px, 5vw, 68px);
+}
+.pagina-atleta .atleta-diferenciais-introdução {
+  position: relative;
+  min-width: 0;
+}
+.pagina-atleta .atleta-diferenciais-introdução::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 6px;
+  margin-top: 31px;
+  background: repeating-linear-gradient(110deg, #77e58f 0 7px, transparent 7px 18px);
+}
+.pagina-atleta .atleta-diferenciais-selo {
+  display: flex;
+  width: min(100%, 340px);
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  padding: 18px 20px;
+  border: 1px solid #77e58f42;
+  border-left: 3px solid #77e58f;
+  background: linear-gradient(100deg, #1a3a24, #102419);
+  box-shadow: 0 15px 35px #0003;
+}
+.pagina-atleta .atleta-diferenciais-selo > svg {
+  flex: none;
+  color: #90eca7;
+}
+.pagina-atleta .atleta-diferenciais-selo div {
+  display: grid;
+  gap: 5px;
+}
+.pagina-atleta .atleta-diferenciais-selo span {
+  color: #80d99a;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-diferenciais-selo strong {
+  color: #f4f3ef;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pagina-atleta .atleta-diferenciais-frentes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 14px;
+}
+.pagina-atleta .atleta-diferenciais-frente {
+  position: relative;
+  min-width: 0;
+  padding: 27px 24px 14px;
+  border: 1px solid #ffffff21;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #153522, #0b1b12 73%);
+  box-shadow: inset 0 1px #ffffff0a, 0 20px 42px #0003;
+}
+.pagina-atleta .atleta-diferenciais-frente:last-child {
+  background: linear-gradient(160deg, #132b1d, #0a1911 73%);
+}
+.pagina-atleta .atleta-diferenciais-frente::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  width: 76px;
+  height: 3px;
+  background: #77e58f;
+}
+.pagina-atleta .atleta-diferenciais-frente-cabeçalho {
+  display: flex;
+  min-height: 88px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.pagina-atleta .atleta-diferenciais-frente-cabeçalho p {
+  color: #95e8a9;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-diferenciais-frente-cabeçalho h3 {
+  margin-top: 8px;
+  color: #f4f3ef;
+  font-size: clamp(25px, 2.2vw, 31px);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-diferenciais-frente-cabeçalho > span {
+  margin-top: -8px;
+  color: #ffffff24;
+  font: 800 49px/1 "Barlow Atleta", Impact, sans-serif;
+}
+.pagina-atleta .atleta-diferencial-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 13px;
+  padding-block: 20px;
+  border-top: 1px solid #ffffff1c;
+}
+.pagina-atleta .atleta-diferencial-ícone {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid #77e58f4d;
+  border-radius: 9px;
+  background: #77e58f12;
+  color: #86e99d;
+}
+.pagina-atleta .atleta-diferencial-item h4 {
+  color: #f1f4f0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.pagina-atleta .atleta-diferencial-item p {
+  margin-top: 8px;
+  color: #afc0b3;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.pagina-atleta .atleta-entregas-seção {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 54% 44% at 92% 6%, #1b633128, transparent 75%),
+    linear-gradient(180deg, #09150e 0%, #07110c 100%);
+}
+.pagina-atleta .atleta-entregas-seção::before {
+  content: "";
+  position: absolute;
+  top: -135px;
+  right: -100px;
+  width: 460px;
+  height: 460px;
+  border: 1px solid #78e5960d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 75px #78e59605, 0 0 0 150px #78e59603;
+  pointer-events: none;
+}
+.pagina-atleta .atleta-entregas-cabeçalho {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 350px);
+  align-items: end;
+  gap: 42px;
+}
+.pagina-atleta .atleta-entregas-resumo {
+  display: grid;
+  gap: 18px;
+  padding-bottom: 5px;
+}
+.pagina-atleta .atleta-entregas-resumo-linha {
+  width: 46px;
+  height: 3px;
+  background: #77e58f;
+}
+.pagina-atleta .atleta-entregas-resumo p {
+  max-width: 340px;
+  color: #c0cfc4;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.pagina-atleta .atleta-entregas-resumo-etapas {
+  color: #79e397;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-entregas-resumo-etapas span {
+  margin-inline: 8px;
+  color: #456a50;
+}
+.pagina-atleta .atleta-entregas-grade {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 48px;
+}
+.pagina-atleta .atleta-entrega {
+  position: relative;
+  display: flex;
+  min-height: 288px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 27px 29px 30px;
+  border: 1px solid #ffffff1b;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #102419 0%, #0a1710 75%);
+  box-shadow: inset 0 1px #ffffff08;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pagina-atleta .atleta-entrega::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  width: 62px;
+  height: 2px;
+  background: #77e58f;
+  opacity: 0.65;
+  transition: width 0.25s, opacity 0.25s;
+}
+.pagina-atleta .atleta-entrega:first-child {
+  border-color: #74e79256;
+  background:
+    radial-gradient(circle at 0% 0%, #23784436, transparent 54%),
+    linear-gradient(145deg, #142d1e, #0b1b12 75%);
+}
+.pagina-atleta .atleta-entrega:first-child::before {
+  width: 126px;
+  opacity: 1;
+}
+.pagina-atleta .atleta-entrega:hover {
+  border-color: #77e58f8c;
+  box-shadow: 0 20px 45px #0005, inset 0 1px #ffffff13;
+}
+.pagina-atleta .atleta-entrega:hover::before {
+  width: 126px;
+  opacity: 1;
+}
+.pagina-atleta .atleta-entrega-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.pagina-atleta .atleta-entrega-ícone {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  flex: none;
+  place-items: center;
+  border: 1px solid #77e58f53;
+  border-radius: 10px;
+  background: #77e58f13;
+  color: #86eca1;
+}
+.pagina-atleta .atleta-entrega-número {
+  margin-top: -9px;
+  color: #ffffff18;
+  font: 800 54px/1 "Barlow Atleta", Impact, sans-serif;
+}
+.pagina-atleta .atleta-entrega-conteúdo {
+  position: relative;
+  z-index: 1;
+  padding-top: 28px;
+}
+.pagina-atleta .atleta-entrega-rótulo {
+  color: #79e397;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-entrega h3 {
+  margin-top: 9px;
+  color: #f4f3ef;
+  font-size: clamp(19px, 1.75vw, 23px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.pagina-atleta .atleta-entrega-descrição {
+  max-width: 38ch;
+  margin-top: 12px;
+  color: #afc0b3;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.pagina-atleta .atleta-entrega-canto {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 33px;
+  height: 33px;
+  border-right: 2px solid #77e58f43;
+  border-bottom: 2px solid #77e58f43;
+  border-bottom-right-radius: 11px;
+}
+.pagina-atleta .atleta-entregas-rodapé {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-top: 30px;
+  color: #7e9c86;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-entregas-rodapé-linha {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, #77e58f66, #77e58f0a);
+}
+.pagina-atleta .atleta-contato {
+  border-top: 1px solid #2da75e;
+  background:
+    radial-gradient(circle at 85% 15%, #36c97433, transparent 40%),
+    linear-gradient(112deg, #08180e 0%, #114629 48%, #127c46 100%);
+}
+.pagina-atleta .atleta-contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    118deg,
+    transparent,
+    transparent 175px,
+    #ffffff09 176px,
+    #ffffff09 177px
+  );
+  pointer-events: none;
+}
+.pagina-atleta .atleta-contato::after {
+  content: "";
+  position: absolute;
+  top: -220px;
+  right: -260px;
+  width: 660px;
+  height: 660px;
+  border: 1px solid #ffffff15;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 90px #ffffff05,
+    0 0 0 180px #ffffff03;
+  pointer-events: none;
+}
+.pagina-atleta .atleta-contato-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #b9f2c8;
+}
+.pagina-atleta .atleta-contato-etiqueta > span {
+  width: 29px;
+  height: 1px;
+  background: #7be79a;
+}
+.pagina-atleta .atleta-contato-título {
+  font-size: clamp(62px, 5.4vw, 82px);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+}
+.pagina-atleta .atleta-contato-título > span {
+  color: #98f2ae;
+}
+.pagina-atleta .atleta-contato-descrição {
+  color: #d0e8d7;
+}
+.pagina-atleta .atleta-contato-assinatura {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #b0e8c1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-contato-traços {
+  display: block;
+  width: 52px;
+  height: 13px;
+  background: repeating-linear-gradient(
+    110deg,
+    #69df8c 0,
+    #69df8c 5px,
+    transparent 5px,
+    transparent 14px
+  );
+}
+.pagina-atleta .atleta-contato-cartão {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 465px;
+  padding: clamp(27px, 3.2vw, 44px);
+  border: 1px solid #ffffff29;
+  background: #0b1b12;
+  box-shadow: 0 30px 80px #04100a80;
+}
+.pagina-atleta .atleta-contato-cartão::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 86px;
+  height: 3px;
+  background: #84e7a0;
+}
+.pagina-atleta .atleta-contato-cartão-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.pagina-atleta .atleta-contato-cartão-topo svg {
+  box-sizing: content-box;
+  flex: none;
+  padding: 11px;
+  border: 1px solid #25d366;
+  background: #075e35;
+  color: #fff;
+}
+.pagina-atleta .atleta-contato-cartão-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 5px;
+  color: #c7c5c9;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.pagina-atleta .atleta-contato-cartão-etiqueta::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #77e58f;
+  box-shadow: 0 0 12px #77e58f;
+}
+.pagina-atleta .atleta-contato-cartão-título {
+  max-width: 310px;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pagina-atleta .atleta-contato-cartão-texto {
+  max-width: 290px;
+  color: #aaaab1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.pagina-atleta .atleta-contato-cartão .atleta-botão-claro {
+  width: 100%;
+  min-height: 66px;
+  justify-content: space-between;
+  margin-top: 34px;
+  padding-inline: 21px 17px;
+  font-size: 13px;
+}
+.pagina-atleta .atleta-contato-cartão .atleta-botão-claro svg {
+  box-sizing: content-box;
+  padding: 8px;
+  border: 1px solid #d6d4d0;
+  border-radius: 50%;
+}
+.pagina-atleta .atleta-contato-cartão-rodapé {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff1d;
+  color: #aaaab1;
+  font-size: 11px;
+}
+.pagina-atleta .atleta-contato-cartão-rodapé p:first-child {
+  color: #f4f3ef;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.pagina-atleta .atleta-contato-marca {
+  position: absolute;
+  bottom: -67px;
+  right: -10px;
+  color: #ffffff0a;
+  font:
+    800 290px/1 "Barlow Atleta",
+    Impact,
+    sans-serif;
+  pointer-events: none;
+}
+.pagina-atleta .atleta-pular {
+  position: fixed;
+  z-index: 60;
+  top: 10px;
+  left: 10px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #07110c;
+  transform: translateY(-150%);
+}
+.pagina-atleta .atleta-pular:focus {
+  transform: translateY(0);
+}
+.pagina-atleta .atleta-diálogo {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(1000px, 96vw);
+  height: min(850px, 92dvh);
+  max-height: 92dvh;
+  padding: 0;
+  border: 1px solid #ffffff26;
+  background: #0b1b12;
+  color: #fff;
+}
+.pagina-atleta .atleta-diálogo::backdrop {
+  background: #000e;
+  backdrop-filter: blur(8px);
+}
+.pagina-atleta .atleta-controle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #161619;
+}
+.pagina-atleta .atleta-controle:hover {
+  background: #157a45;
+}
+html:has(.pagina-atleta)::-webkit-scrollbar-thumb {
+  background: #25824d;
+  box-shadow: none;
+}
+
+@media (max-width: 1023px) {
+  .pagina-atleta .atleta-diferenciais-grade {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pagina-atleta .atleta-diferenciais-introdução > p {
+    max-width: 60ch;
+  }
+  .pagina-atleta .atleta-sobre-grade {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .pagina-atleta .atleta-sobre-apresentação {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+    align-items: end;
+    gap: 28px;
+  }
+  .pagina-atleta .atleta-sobre-visual {
+    height: 280px;
+    margin-top: 0;
+  }
+  .pagina-atleta .atleta-entregas-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pagina-atleta .atleta-entregas-cabeçalho {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    gap: 26px;
+  }
+  .pagina-atleta .atleta-contato-cartão {
+    justify-self: start;
+    max-width: 560px;
+  }
+  .pagina-atleta .atleta-retrato {
+    height: 540px;
+    min-height: 0;
+    margin-top: -30px;
+  }
+  .pagina-atleta .atleta-letras-fundo {
+    font-size: 360px;
+  }
+  .pagina-atleta .atleta-seção {
+    padding-block: 72px;
+  }
+}
+@media (max-width: 767px) {
+  .pagina-atleta {
+    --altura-cabecalho-atleta: 112px;
+  }
+  .pagina-atleta .atleta-sobre-apresentação {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .pagina-atleta .atleta-sobre-visual {
+    width: min(100%, 480px);
+    height: 255px;
+  }
+  .pagina-atleta .atleta-entregas-cabeçalho {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .pagina-atleta .atleta-entregas-resumo {
+    gap: 12px;
+  }
+}
+@media (max-width: 639px) {
+  .pagina-atleta {
+    --altura-cabecalho-atleta: 124px;
+  }
+  .pagina-atleta .atleta-contato-título {
+    font-size: clamp(43px, 10.7vw, 56px);
+  }
+  .pagina-atleta .atleta-contato-assinatura {
+    font-size: 9px;
+    letter-spacing: 0.11em;
+  }
+  .pagina-atleta .atleta-contato-cartão .atleta-botão-claro {
+    gap: 12px;
+    padding-inline: 16px;
+    font-size: 12px;
+  }
+  .pagina-atleta .atleta-container {
+    width: calc(100% - 40px);
+  }
+  .pagina-atleta .atleta-diferenciais-frentes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pagina-atleta .atleta-diferenciais-frente {
+    padding: 25px 22px 11px;
+  }
+  .pagina-atleta .atleta-diferenciais-frente-cabeçalho {
+    min-height: 76px;
+  }
+  .pagina-atleta .atleta-diferencial-item {
+    padding-block: 17px;
+  }
+  .pagina-atleta .atleta-logotipo {
+    width: 50px;
+    height: 50px;
+  }
+  .pagina-atleta .atleta-nome {
+    font-size: clamp(78px, 23vw, 125px);
+  }
+  .pagina-atleta .atleta-etiqueta {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+  .pagina-atleta .atleta-retrato {
+    height: 380px;
+    margin-top: 0;
+  }
+  .pagina-atleta .atleta-letras-fundo {
+    top: 10%;
+    font-size: 270px;
+  }
+  .pagina-atleta .atleta-seção {
+    padding-block: 60px;
+  }
+  .pagina-atleta .atleta-sobre-grade {
+    gap: 38px;
+  }
+  .pagina-atleta .atleta-sobre-visual {
+    width: calc(100% - 14px);
+    height: 225px;
+    box-shadow: 14px 14px 0 #12341f7a;
+  }
+  .pagina-atleta .atleta-sobre-bloco {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .pagina-atleta .atleta-sobre-abertura {
+    font-size: 21px;
+  }
+  .pagina-atleta .atleta-entregas-grade {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 34px;
+  }
+  .pagina-atleta .atleta-entrega {
+    min-height: 255px;
+    padding: 25px;
+  }
+  .pagina-atleta .atleta-entrega h3 {
+    font-size: 21px;
+  }
+  .pagina-atleta .atleta-entregas-rodapé {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    line-height: 1.7;
+  }
+  .pagina-atleta .atleta-entregas-rodapé-linha {
+    display: none;
+  }
+  .pagina-atleta .atleta-foto {
+    height: 380px;
+  }
+  .pagina-atleta .atleta-legenda-retrato {
+    right: 0;
+    bottom: 20px;
+  }
+  .pagina-atleta .atleta-contato-marca {
+    font-size: 180px;
+    bottom: -35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.pagina-atleta) {
+    scroll-behavior: auto;
+  }
+  .pagina-atleta *,
+  .pagina-atleta *::before,
+  .pagina-atleta *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

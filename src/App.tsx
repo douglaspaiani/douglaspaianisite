@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes, StaticRouter } from 'react-router';
+import { BrowserRouter, Link, Outlet, Route, Routes, StaticRouter } from 'react-router';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
@@ -17,6 +17,7 @@ const Cursos = lazy(() => import('./pages/Cursos'));
 const CursoDetalhe = lazy(() => import('./pages/CursoDetalhe'));
 const Privacidade = lazy(() => import('./pages/Privacidade'));
 const Termos = lazy(() => import('./pages/Termos'));
+const Atleta = lazy(() => import('./pages/Atleta'));
 
 export const rotasEstaticas = [
   '/', '/sobre', '/projetos', '/servicos/sites',
@@ -24,7 +25,7 @@ export const rotasEstaticas = [
   '/servicos/plataformas', '/cursos',
   '/cursos/programacao-mvp-inteligencia-artificial-no-code',
   '/cursos/sites-elite-inteligencia-artificial',
-  '/privacidade', '/termos',
+  '/privacidade', '/termos', '/atleta',
 ];
 
 interface PropriedadesAplicacao {
@@ -47,27 +48,14 @@ function PaginaNaoEncontrada() {
   );
 }
 
-export default function Aplicacao({ enderecoInicial, contextoMetadados }: PropriedadesAplicacao) {
-  const conteudo = (
-    <HelmetProvider context={contextoMetadados}>
-      <ScrollToTop />
+// O layout esportivo é independente; as demais rotas mantêm a apresentação original.
+function LayoutPrincipal() {
+  return (
+    <>
       <WhatsappFlutuante />
       <div className="min-h-screen bg-black text-white selection:bg-cyan-500 selection:text-black overflow-x-hidden">
         <Navbar />
-        <Suspense fallback={null}><Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/projetos" element={<Projetos />} />
-          <Route path="/servicos/sites" element={<Sites />} />
-          <Route path="/servicos/lojas-virtuais" element={<LojasVirtuais />} />
-          <Route path="/servicos/aplicativos" element={<Aplicativos />} />
-          <Route path="/servicos/plataformas" element={<Plataformas />} />
-          <Route path="/cursos" element={<Cursos />} />
-          <Route path="/cursos/:slug" element={<CursoDetalhe />} />
-          <Route path="/privacidade" element={<Privacidade />} />
-          <Route path="/termos" element={<Termos />} />
-          <Route path="*" element={<PaginaNaoEncontrada />} />
-        </Routes></Suspense>
+        <Suspense fallback={null}><Outlet /></Suspense>
         <div className="flex justify-center bg-black px-6 py-10">
           <a href="https://usagescope.com" className="w-full max-w-[320px] rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400">
             <img
@@ -83,6 +71,33 @@ export default function Aplicacao({ enderecoInicial, contextoMetadados }: Propri
         </div>
         <Footer />
       </div>
+    </>
+  );
+}
+
+export default function Aplicacao({ enderecoInicial, contextoMetadados }: PropriedadesAplicacao) {
+  const conteudo = (
+    <HelmetProvider context={contextoMetadados}>
+      <ScrollToTop />
+      <Suspense fallback={<div role="status" className="min-h-screen bg-black p-8 text-white">Carregando página…</div>}>
+        <Routes>
+          <Route path="/atleta" element={<Atleta />} />
+          <Route element={<LayoutPrincipal />}>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/projetos" element={<Projetos />} />
+            <Route path="/servicos/sites" element={<Sites />} />
+            <Route path="/servicos/lojas-virtuais" element={<LojasVirtuais />} />
+            <Route path="/servicos/aplicativos" element={<Aplicativos />} />
+            <Route path="/servicos/plataformas" element={<Plataformas />} />
+            <Route path="/cursos" element={<Cursos />} />
+            <Route path="/cursos/:slug" element={<CursoDetalhe />} />
+            <Route path="/privacidade" element={<Privacidade />} />
+            <Route path="/termos" element={<Termos />} />
+            <Route path="*" element={<PaginaNaoEncontrada />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </HelmetProvider>
   );
 

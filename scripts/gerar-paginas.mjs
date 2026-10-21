@@ -28,6 +28,11 @@ try {
       !metadadosPagina.includes('name="twitter:card"') && '<meta name="twitter:card" content="summary_large_image" />',
       !metadadosPagina.includes('name="twitter:image"') && `<meta name="twitter:image" content="${imagemCompartilhamento}" />`,
     ].filter(Boolean).join('\n');
+    // O CSS da rota carregada sob demanda precisa existir também antes da hidratação.
+    const estilosPagina = rota === '/atleta'
+      ? (manifesto['src/pages/Atleta.tsx']?.css ?? [])
+          .map((arquivo) => `<link rel="stylesheet" href="/${arquivo}" />`).join('\n')
+      : '';
     let conteudoEstatico = conteudo
       .replace(expressaoMetadados, '')
       // O React pré-carrega todas as imagens no SSR; isso compete com a imagem principal.
@@ -48,7 +53,11 @@ try {
 
     const documento = modeloHtml
       .replace(/<title>[^<]*<\/title>/, '')
-      .replace('</head>', `${cabecalho}\n${metadadosPagina}\n${metadadosSociais}\n</head>`)
+      .replace(/<link rel="icon"[^>]*\/>/, (íconePrincipal) =>
+        rota === '/atleta' ? '' : íconePrincipal)
+      .replace(/<meta name="theme-color"[^>]*\/>/, (metadado) =>
+        metadadosPagina.includes('name="theme-color"') ? '' : metadado)
+      .replace('</head>', `${cabecalho}\n${metadadosPagina}\n${metadadosSociais}\n${estilosPagina}\n</head>`)
       .replace('<div id="root"></div>', `<div id="root">${conteudoEstatico}</div>`);
 
     await mkdir(dirname(caminhoArquivo), { recursive: true });

@@ -117,11 +117,11 @@ export default function Hero() {
             className="order-1 lg:order-1 relative"
           >
             <motion.img
-              src="/douglas-paiani01.webp"
+              src="/douglas-paiani-corrigido.webp"
               alt="Foto Douglas Paiani"
               fetchPriority="high"
-              width="1030"
-              height="1065"
+              width="1234"
+              height="1275"
               className="w-auto h-auto max-w-full max-h-[820px] select-none"
               draggable={false}
             />
