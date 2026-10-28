@@ -18,6 +18,8 @@ const CursoDetalhe = lazy(() => import('./pages/CursoDetalhe'));
 const Privacidade = lazy(() => import('./pages/Privacidade'));
 const Termos = lazy(() => import('./pages/Termos'));
 const Atleta = lazy(() => import('./pages/Atleta'));
+const Consultoria = lazy(() => import('./pages/Consultoria'));
+const BioConsultoria = lazy(() => import('./pages/BioConsultoria'));
 
 export const rotasEstaticas = [
   '/', '/sobre', '/projetos', '/servicos/sites',
@@ -25,7 +27,7 @@ export const rotasEstaticas = [
   '/servicos/plataformas', '/cursos',
   '/cursos/programacao-mvp-inteligencia-artificial-no-code',
   '/cursos/sites-elite-inteligencia-artificial',
-  '/privacidade', '/termos', '/atleta',
+  '/privacidade', '/termos', '/atleta', '/consultoria', '/consultoria/bio',
 ];
 
 interface PropriedadesAplicacao {
@@ -82,6 +84,8 @@ export default function Aplicacao({ enderecoInicial, contextoMetadados }: Propri
       <Suspense fallback={<div role="status" className="min-h-screen bg-black p-8 text-white">Carregando página…</div>}>
         <Routes>
           <Route path="/atleta" element={<Atleta />} />
+          <Route path="/consultoria" element={<Consultoria />} />
+          <Route path="/consultoria/bio" element={<BioConsultoria />} />
           <Route element={<LayoutPrincipal />}>
             <Route path="/" element={<Inicio />} />
             <Route path="/sobre" element={<Sobre />} />

@@ -19,18 +19,25 @@ try {
   for (const rota of rotasEstaticas) {
     const { conteudo, cabecalho } = await renderizarPagina(rota);
     const caminhoArquivo = join(pastaSaida, rota === '/' ? '' : rota.slice(1), 'index.html');
-    const expressaoMetadados = /<title[^>]*>[\s\S]*?<\/title>|<meta\s[^>]*\/>|<link rel="canonical"[^>]*\/>|<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g;
+    // O React 19 antecipa títulos, metadados e ícones. O JSON-LD permanece na árvore
+    // original, onde também é válido para SEO, para preservar a hidratação do React.
+    const expressaoMetadados = /<title[^>]*>[\s\S]*?<\/title>|<meta\s[^>]*\/>|<link rel="(?:canonical|icon|apple-touch-icon)"[^>]*\/>/g;
     const metadadosPagina = conteudo.match(expressaoMetadados)?.join('\n') ?? '';
     const imagemCompartilhamento = `${dominio}/douglas_ia.jpg`;
     const metadadosSociais = [
-      '<meta property="og:locale" content="pt_BR" />',
+      !metadadosPagina.includes('property="og:locale"') && '<meta property="og:locale" content="pt_BR" />',
       !metadadosPagina.includes('property="og:image"') && `<meta property="og:image" content="${imagemCompartilhamento}" />`,
       !metadadosPagina.includes('name="twitter:card"') && '<meta name="twitter:card" content="summary_large_image" />',
       !metadadosPagina.includes('name="twitter:image"') && `<meta name="twitter:image" content="${imagemCompartilhamento}" />`,
     ].filter(Boolean).join('\n');
     // O CSS da rota carregada sob demanda precisa existir também antes da hidratação.
-    const estilosPagina = rota === '/atleta'
-      ? (manifesto['src/pages/Atleta.tsx']?.css ?? [])
+    const páginasIndependentes = {
+      '/atleta': 'src/pages/Atleta.tsx',
+      '/consultoria': 'src/pages/Consultoria.tsx',
+      '/consultoria/bio': 'src/pages/BioConsultoria.tsx',
+    };
+    const estilosPagina = páginasIndependentes[rota]
+      ? (manifesto[páginasIndependentes[rota]]?.css ?? [])
           .map((arquivo) => `<link rel="stylesheet" href="/${arquivo}" />`).join('\n')
       : '';
     let conteudoEstatico = conteudo
@@ -54,7 +61,7 @@ try {
     const documento = modeloHtml
       .replace(/<title>[^<]*<\/title>/, '')
       .replace(/<link rel="icon"[^>]*\/>/, (íconePrincipal) =>
-        rota === '/atleta' ? '' : íconePrincipal)
+        páginasIndependentes[rota] ? '' : íconePrincipal)
       .replace(/<meta name="theme-color"[^>]*\/>/, (metadado) =>
         metadadosPagina.includes('name="theme-color"') ? '' : metadado)
       .replace('</head>', `${cabecalho}\n${metadadosPagina}\n${metadadosSociais}\n${estilosPagina}\n</head>`)

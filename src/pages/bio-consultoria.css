@@ -1,0 +1,534 @@
+@font-face {
+  font-family: "Barlow Bio";
+  src: url("/atleta/barlow-condensed-800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+.página-bio-consultoria {
+  --bio-vermelho: #f1353e;
+  color-scheme: dark;
+  color: #f6f3f1;
+  background:
+    radial-gradient(ellipse at 50% 5%, #5b0d183d, transparent 58%), #080708;
+  min-height: 100svh;
+  padding: 30px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+.página-bio-consultoria * {
+  box-sizing: border-box;
+}
+.página-bio-consultoria a {
+  text-decoration: none;
+}
+.página-bio-consultoria a:focus-visible {
+  outline: 2px solid #ff6c74;
+  outline-offset: 5px;
+}
+.página-bio-consultoria img {
+  display: block;
+  max-width: 100%;
+}
+.página-bio-consultoria ::selection {
+  background: var(--bio-vermelho);
+  color: white;
+}
+.bio-cartão {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #0d0b0c;
+  border: 1px solid #ffffff12;
+  box-shadow: 0 20px 100px #0007;
+  overflow: hidden;
+}
+.bio-capa {
+  position: relative;
+  height: 305px;
+  isolation: isolate;
+}
+.bio-capa-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 49% 43%;
+}
+.bio-capa-sombra {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      0deg,
+      #0d0b0c 0%,
+      #0d0b0c33 42%,
+      transparent 65%,
+      #09070970
+    ),
+    linear-gradient(
+      90deg,
+      #0d0b0c60,
+      transparent 35%,
+      transparent 70%,
+      #0d0b0c88
+    );
+}
+.bio-capa-topo {
+  position: absolute;
+  inset: 18px 22px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.bio-capa-topo > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ece9e8;
+}
+.bio-capa-topo > span > span {
+  width: 5px;
+  height: 5px;
+  background: var(--bio-vermelho);
+  box-shadow: 0 0 10px #f1353e;
+  flex-shrink: 0;
+}
+.bio-capa-topo > a {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff40;
+  background: #0d0b0c66;
+  transition: background 0.25s;
+}
+.bio-capa-topo > a:hover {
+  background: var(--bio-vermelho);
+}
+.bio-logotipo {
+  position: absolute;
+  width: 190px;
+  height: auto;
+  bottom: -33px;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: screen;
+}
+.bio-conteúdo {
+  padding: 35px 30px 22px;
+}
+.bio-apresentação {
+  text-align: center;
+}
+.bio-etiqueta {
+  font-size: 7px;
+  letter-spacing: 1.9px;
+  color: #b19c9f;
+  font-weight: 700;
+  margin: 0;
+}
+.bio-apresentação h1 {
+  font:
+    800 42px/1.05 "Barlow Bio",
+    Impact,
+    sans-serif;
+  letter-spacing: -0.3px;
+  margin: 11px 0 13px;
+}
+.bio-apresentação h1 > span {
+  color: var(--bio-vermelho);
+}
+.bio-apresentação > p:not(.bio-etiqueta) {
+  margin: 0 auto;
+  max-width: 370px;
+  font-size: 12px;
+  line-height: 1.85;
+  color: #aaa3a5;
+}
+.bio-campeão {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 15px;
+  font-size: 9px;
+  color: #beb5b7;
+}
+.bio-campeão > svg {
+  color: var(--bio-vermelho);
+  flex-shrink: 0;
+}
+.bio-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+.bio-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 79px;
+  padding: 15px 17px;
+  border: 1px solid #ffffff20;
+  background: linear-gradient(110deg, #211a1c, #151213);
+  color: #f6f3f1;
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    background 0.25s;
+  animation: bio-entrada 0.6s ease-out both;
+}
+.bio-link:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.bio-link:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.bio-link:hover {
+  transform: translateY(-3px);
+  border-color: #f1353e99;
+  background: #2b191c;
+}
+.bio-link-ícone {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--bio-vermelho);
+  background: #f1353e0d;
+  border: 1px solid #f1353e26;
+}
+.bio-link-texto {
+  min-width: 0;
+}
+.bio-link-texto > strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.bio-link-texto > span {
+  display: block;
+  font-size: 9px;
+  color: #9c9094;
+  margin-top: 3px;
+}
+.bio-link-seta {
+  margin-left: auto;
+  color: #b4a3a8;
+  flex-shrink: 0;
+}
+.bio-link-whatsapp {
+  background: linear-gradient(105deg, #f1353e, #ca202e);
+  border-color: #ff60677d;
+  box-shadow: 0 8px 25px #9c0c1829;
+}
+.bio-link-whatsapp:hover {
+  background: #e92d38;
+  border-color: #ff6c74;
+}
+.bio-link-whatsapp .bio-link-ícone {
+  color: white;
+  background: #ffffff0c;
+  border-color: #ffffff35;
+}
+.bio-link-whatsapp .bio-link-texto > span {
+  color: #ffe5e6c9;
+}
+.bio-link-whatsapp .bio-link-seta {
+  color: white;
+}
+.bio-oferta {
+  margin-top: 30px;
+  padding: 25px;
+  border: 1px solid #f1353e50;
+  background:
+    radial-gradient(ellipse at 100% 0, #bc23372a, transparent 65%), #171012;
+  position: relative;
+}
+.bio-oferta::before {
+  content: "";
+  position: absolute;
+  inset: -1px auto auto -1px;
+  width: 42px;
+  height: 3px;
+  background: var(--bio-vermelho);
+}
+.bio-oferta-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.bio-oferta-topo > span:first-child {
+  color: #ef717b;
+  font-size: 6px;
+  letter-spacing: 1.6px;
+}
+.bio-oferta-topo > span:last-child {
+  color: #987e85;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.bio-oferta h2 {
+  font:
+    800 35px/1.05 "Barlow Bio",
+    Impact,
+    sans-serif;
+  margin: 19px 0 22px;
+  letter-spacing: -0.3px;
+}
+.bio-oferta h2 > span {
+  color: var(--bio-vermelho);
+}
+.bio-preço-etiqueta {
+  font-size: 7px;
+  letter-spacing: 1.7px;
+  color: #b29ca3;
+  margin: 0 0 6px;
+}
+.bio-preço {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  line-height: 1;
+}
+.bio-preço > span:first-child {
+  font-size: 17px;
+  color: #d1bcc2;
+}
+.bio-preço > strong {
+  font:
+    800 75px/0.95 "Barlow Bio",
+    Impact,
+    sans-serif;
+  letter-spacing: -1px;
+}
+.bio-preço > strong > span {
+  font-size: 40px;
+  letter-spacing: -0.6px;
+}
+.bio-preço > span:last-child {
+  color: #a68b94;
+  font-size: 11px;
+  margin-left: 2px;
+}
+.bio-inclusos {
+  padding: 17px 0 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+}
+.bio-inclusos > li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #dbcbd0;
+}
+.bio-inclusos svg {
+  color: var(--bio-vermelho);
+  flex-shrink: 0;
+}
+.bio-oferta-descrição {
+  margin: 18px 0 20px;
+  color: #aa959d;
+  font-size: 11px;
+  line-height: 1.85;
+  max-width: 340px;
+}
+.bio-oferta-ação {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--bio-vermelho);
+  border: 1px solid #ff71773d;
+  transition: background 0.25s;
+}
+.bio-oferta-ação:hover {
+  background: #d32330;
+}
+.bio-oferta-nota {
+  font-size: 8px;
+  line-height: 1.85;
+  color: #8e767f;
+  margin: 13px 0 0;
+}
+.bio-proclub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 25px 0 21px;
+}
+.bio-proclub > span {
+  color: #7a6e73;
+  font-size: 6px;
+  letter-spacing: 1.2px;
+}
+.bio-proclub > img {
+  width: 88px;
+  height: auto;
+  opacity: 0.85;
+}
+.bio-rodapé {
+  border-top: 1px solid #ffffff0e;
+  padding-top: 18px;
+  text-align: center;
+}
+.bio-rodapé > p {
+  margin: 0 0 8px;
+  color: #6f6066;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.bio-rodapé > span {
+  color: #74646b;
+  font-size: 8px;
+}
+.bio-rodapé a {
+  color: #b2a3a9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bio-rodapé a:hover {
+  color: var(--bio-vermelho);
+}
+@keyframes bio-entrada {
+  from {
+    transform: translateY(10px);
+    opacity: 0.75;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 560px) {
+  .página-bio-consultoria {
+    padding: 0;
+    background: #0d0b0c;
+  }
+  .bio-cartão {
+    border: none;
+    box-shadow: none;
+    max-width: none;
+  }
+  .bio-capa {
+    height: 275px;
+  }
+  .bio-capa-topo {
+    inset: 16px 20px auto;
+  }
+  .bio-capa-topo > span {
+    letter-spacing: 1.1px;
+  }
+  .bio-logotipo {
+    width: 180px;
+    bottom: -31px;
+  }
+  .bio-conteúdo {
+    padding: 34px 22px max(22px, env(safe-area-inset-bottom));
+  }
+  .bio-apresentação h1 {
+    font-size: 39px;
+  }
+  .bio-apresentação > p:not(.bio-etiqueta) {
+    font-size: 11px;
+    max-width: 330px;
+  }
+  .bio-links {
+    margin-top: 25px;
+    gap: 11px;
+  }
+  .bio-link {
+    padding: 14px;
+    gap: 12px;
+    min-height: 76px;
+  }
+  .bio-link-texto > strong {
+    font-size: 11px;
+  }
+  .bio-link-texto > span {
+    font-size: 8px;
+  }
+  .bio-oferta {
+    padding: 22px;
+    margin-top: 26px;
+  }
+  .bio-oferta h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 360px) {
+  .bio-capa {
+    height: 250px;
+  }
+  .bio-conteúdo {
+    padding-inline: 17px;
+  }
+  .bio-capa-topo {
+    inset-inline: 17px;
+  }
+  .bio-capa-topo > span {
+    font-size: 5px;
+    letter-spacing: 0.8px;
+  }
+  .bio-etiqueta {
+    font-size: 6px;
+    letter-spacing: 1.6px;
+  }
+  .bio-apresentação h1 {
+    font-size: 35px;
+  }
+  .bio-link {
+    gap: 9px;
+    padding-inline: 11px;
+  }
+  .bio-link-ícone {
+    width: 32px;
+    height: 35px;
+  }
+  .bio-link-ícone > svg {
+    width: 20px;
+  }
+  .bio-link-texto > strong {
+    font-size: 10px;
+  }
+  .bio-link-texto > span {
+    font-size: 7px;
+  }
+  .bio-link-seta {
+    width: 16px;
+  }
+  .bio-oferta {
+    padding: 20px;
+  }
+  .bio-oferta h2 {
+    font-size: 31px;
+  }
+  .bio-inclusos {
+    gap: 8px 10px;
+  }
+  .bio-inclusos > li {
+    font-size: 9px;
+    gap: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .página-bio-consultoria *,
+  .página-bio-consultoria *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

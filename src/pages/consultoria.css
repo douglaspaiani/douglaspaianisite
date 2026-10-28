@@ -1,0 +1,2534 @@
+@font-face {
+  font-family: "Barlow Consultoria";
+  src: url("/atleta/barlow-condensed-800.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+.página-consultoria {
+  --vermelho: #f1353e;
+  --fundo: #090909;
+  --cinza: #a5a5a8;
+  --linha: #ffffff1b;
+  background: var(--fundo);
+  color: #f4f3ef;
+  font-family: Arial, Helvetica, sans-serif;
+  color-scheme: dark;
+  overflow: clip;
+  isolation: isolate;
+  line-height: 1.6;
+}
+.página-consultoria * {
+  box-sizing: border-box;
+}
+.página-consultoria a {
+  text-decoration: none;
+}
+.página-consultoria button {
+  font: inherit;
+  color: inherit;
+}
+.página-consultoria img {
+  display: block;
+  max-width: 100%;
+}
+.página-consultoria :is(a, button, summary):focus-visible {
+  outline: 2px solid #ff646b;
+  outline-offset: 6px;
+}
+.página-consultoria :is(section, [id]) {
+  scroll-margin-top: 110px;
+}
+.consultoria-contêiner {
+  width: min(1280px, calc(100% - 112px));
+  margin-inline: auto;
+}
+.consultoria-seção {
+  padding-block: 112px;
+}
+.consultoria-progresso {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--vermelho);
+  transform-origin: left;
+  z-index: 100;
+}
+.consultoria-pular {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  padding: 14px;
+  background: var(--vermelho);
+  z-index: 101;
+}
+.consultoria-pular:focus {
+  top: 8px;
+}
+.consultoria-cabeçalho {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  border-bottom: 1px solid var(--linha);
+  background: #0909099c;
+  backdrop-filter: blur(16px);
+}
+.consultoria-navegação {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 106px;
+  gap: 35px;
+}
+.consultoria-marca {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+.consultoria-marca img {
+  width: 122px;
+  height: 80px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+.consultoria-marca > span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  width: 90px;
+  border-left: 1px solid #ffffff35;
+  padding-left: 19px;
+  color: #ccc;
+}
+.consultoria-navegação nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.consultoria-navegação nav a {
+  font-size: 12px;
+  color: #d0d0d0;
+  transition: color 0.2s;
+}
+.consultoria-navegação nav a:hover {
+  color: var(--vermelho);
+}
+.consultoria-link-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.consultoria-entrar {
+  border: 1px solid #ffffff45;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 11px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.consultoria-entrar:hover {
+  background: var(--vermelho);
+}
+.consultoria-menu-botão {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px;
+}
+.consultoria-menu {
+  position: fixed;
+  inset: 0;
+  margin: 0 0 0 auto;
+  max-height: 100dvh;
+  width: min(430px, 100%);
+  height: 100dvh;
+  border: 0;
+  background: #101010;
+  padding: 32px;
+  z-index: 90;
+}
+.consultoria-menu::backdrop {
+  background: #000a;
+  backdrop-filter: blur(8px);
+}
+.consultoria-menu > div > button {
+  display: block;
+  margin-left: auto;
+  border: 1px solid var(--linha);
+  background: transparent;
+  padding: 12px;
+  margin-bottom: 45px;
+}
+.consultoria-menu nav {
+  display: grid;
+  margin: 28px 0 45px;
+}
+.consultoria-menu nav a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 23px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--linha);
+}
+.consultoria-menu nav a > span {
+  font-size: 11px;
+  color: var(--vermelho);
+}
+.consultoria-menu nav svg {
+  margin-left: auto;
+  width: 19px;
+}
+.consultoria-hero {
+  position: relative;
+  min-height: 850px;
+  min-height: max(830px, 100svh);
+  display: flex;
+  align-items: center;
+  padding: 160px 0 120px;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 80% 10%, #40101355, transparent 65%), #090909;
+}
+.consultoria-hero-imagem {
+  position: absolute;
+  z-index: -2;
+  inset: 0 0 0 39%;
+  overflow: hidden;
+}
+.consultoria-hero-imagem > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 45%;
+}
+.consultoria-hero-imagem-sombra {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #090909 0%,
+      #090909bb 12%,
+      #09090908 48%,
+      #09090920 78%,
+      #090909d9
+    ),
+    linear-gradient(
+      0deg,
+      #090909 0%,
+      transparent 28%,
+      transparent 70%,
+      #0909096b
+    );
+}
+.consultoria-hero-linhas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+  background-size: 25% 100%;
+  mask-image: linear-gradient(90deg, #000, transparent 70%);
+}
+.consultoria-hero-conteúdo {
+  position: relative;
+  z-index: 1;
+}
+.consultoria-hero-etiqueta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #d4d4d4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  margin: 0 0 25px;
+}
+.consultoria-hero-etiqueta > span {
+  width: 6px;
+  height: 6px;
+  background: var(--vermelho);
+  box-shadow: 0 0 15px var(--vermelho);
+  animation: consultoria-pulso 3s infinite;
+}
+.página-consultoria h1,
+.página-consultoria h2,
+.consultoria-mentor-nome,
+.consultoria-hero-assinatura strong,
+.consultoria-presente-fundo,
+.consultoria-bastidores-contorno {
+  font-family: "Barlow Consultoria", "Arial Narrow", Impact, sans-serif;
+  font-weight: 800;
+  line-height: 0.99;
+  letter-spacing: -1.3px;
+  margin: 0;
+}
+.página-consultoria h1 {
+  font-size: clamp(78px, 8.1vw, 124px);
+  max-width: 800px;
+  letter-spacing: -1.8px;
+}
+.página-consultoria h1 > span:first-of-type {
+  color: var(--vermelho);
+  font-style: italic;
+}
+.consultoria-ponto {
+  color: var(--vermelho);
+}
+.consultoria-hero-descrição {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #bbb;
+  margin: 27px 0 29px;
+}
+.consultoria-hero-descrição strong {
+  color: #eee;
+  font-weight: 500;
+}
+.consultoria-botão {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: var(--vermelho);
+  padding: 17px 24px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  min-height: 53px;
+  transition:
+    background 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.consultoria-botão:hover {
+  background: #d8222b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px #ed303929;
+}
+.consultoria-botão svg {
+  flex-shrink: 0;
+}
+.consultoria-botão-contorno {
+  background: transparent;
+  border-color: #ffffff35;
+}
+.consultoria-botão-contorno:hover {
+  background: #ffffff0b;
+  border-color: var(--vermelho);
+}
+.consultoria-hero-ações {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+}
+.consultoria-hero-como {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.consultoria-hero-como > span {
+  border: 1px solid #ffffff40;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.consultoria-hero-como:hover > span {
+  background: var(--vermelho);
+}
+.consultoria-hero-base {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 45px;
+}
+.consultoria-hero-base > svg {
+  color: var(--vermelho);
+}
+.consultoria-hero-base strong {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  display: block;
+}
+.consultoria-hero-base span {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 5px;
+}
+.consultoria-hero-assinatura {
+  position: absolute;
+  right: 5%;
+  bottom: 130px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+.consultoria-hero-assinatura > span {
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #bbb;
+}
+.consultoria-hero-assinatura strong {
+  font-size: 40px;
+  text-align: right;
+}
+.consultoria-hero-assinatura strong > span {
+  display: block;
+  font: 8px Arial;
+  letter-spacing: 3px;
+  color: var(--vermelho);
+  margin-top: 13px;
+}
+.consultoria-rolar {
+  position: absolute;
+  bottom: 40px;
+  left: calc((100% - min(1280px, 100% - 112px)) / 2);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #888;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.consultoria-rolar svg {
+  color: var(--vermelho);
+  animation: consultoria-flutuar 3s ease-in-out infinite;
+}
+.consultoria-faixa {
+  background: var(--vermelho);
+  overflow: hidden;
+  transform: rotate(-1.3deg);
+  position: relative;
+  z-index: 2;
+  margin: -11px -10px 0;
+  padding: 15px 0;
+}
+.consultoria-faixa > div {
+  display: flex;
+  width: max-content;
+  animation: consultoria-deslizar 38s linear infinite;
+}
+.consultoria-faixa span {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-right: 35px;
+  font-family: "Barlow Consultoria", sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.4px;
+}
+.consultoria-faixa svg {
+  width: 20px;
+  color: #500b0b;
+}
+.consultoria-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #aaa;
+  margin: 0 0 26px;
+}
+.consultoria-etiqueta > span {
+  color: var(--vermelho);
+}
+.página-consultoria h2 {
+  font-size: clamp(43px, 4.7vw, 68px);
+}
+.página-consultoria h2 > span {
+  color: var(--vermelho);
+}
+.consultoria-título-dividido {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 90px;
+  align-items: end;
+}
+.consultoria-título-dividido > p,
+.consultoria-texto {
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 22px 0 0;
+  max-width: 490px;
+}
+.consultoria-texto strong {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+.consultoria-benefícios {
+  margin-top: 60px;
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.consultoria-benefício {
+  padding: 35px 35px 35px 0;
+}
+.consultoria-benefício + div {
+  border-left: 1px solid var(--linha);
+  padding-left: 35px;
+}
+.consultoria-benefício > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.consultoria-benefício svg {
+  color: var(--vermelho);
+}
+.consultoria-benefício > div > span {
+  font: 48px "Barlow Consultoria";
+  color: #ffffff0f;
+}
+.consultoria-benefício h3 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.consultoria-benefício p {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.9;
+  max-width: 310px;
+  margin: 0;
+}
+.consultoria-processo {
+  background: #101010;
+  border-block: 1px solid #ffffff07;
+}
+.consultoria-processo-grade {
+  display: grid;
+  grid-template-columns: 1fr 1.07fr;
+  gap: 85px;
+  margin-top: 55px;
+  align-items: center;
+}
+.consultoria-processo-foto {
+  height: 570px;
+  position: relative;
+  overflow: hidden;
+}
+.consultoria-processo-foto > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 59%;
+  transition: transform 1s;
+}
+.consultoria-processo-foto:hover > img {
+  transform: scale(1.035);
+}
+.consultoria-processo-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #000d, transparent 45%);
+}
+.consultoria-foto-legenda {
+  position: absolute;
+  bottom: 32px;
+  left: 30px;
+  z-index: 1;
+}
+.consultoria-foto-legenda > span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #bbb;
+}
+.consultoria-foto-legenda > strong {
+  display: block;
+  font: 36px "Barlow Consultoria";
+  margin-top: 5px;
+}
+.consultoria-selo-foto {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  padding: 12px 15px;
+  background: #070707b0;
+  border: 1px solid #ffffff30;
+}
+.consultoria-selo-foto svg {
+  color: var(--vermelho);
+}
+.consultoria-etapa {
+  border-bottom: 1px solid var(--linha);
+}
+.consultoria-etapa > button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 25px 0;
+  gap: 20px;
+}
+.consultoria-etapa-número {
+  font-family: "Barlow Consultoria";
+  font-size: 30px;
+  color: #454545;
+  align-self: flex-start;
+  line-height: 1.4;
+}
+.consultoria-etapa small {
+  display: block;
+  color: #777;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 7px;
+}
+.consultoria-etapa strong {
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+}
+.consultoria-etapa button > svg {
+  margin-left: auto;
+  width: 18px;
+  transition:
+    transform 0.3s,
+    color 0.3s;
+  flex-shrink: 0;
+}
+.consultoria-etapa.ativa button > svg {
+  transform: rotate(45deg);
+  color: var(--vermelho);
+}
+.consultoria-etapa.ativa .consultoria-etapa-número {
+  color: var(--vermelho);
+}
+.consultoria-etapa > div {
+  padding: 0 0 26px 47px;
+}
+.consultoria-etapa > div > p {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.9;
+  margin: 0 0 20px;
+}
+.consultoria-etapa-detalhe {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #ccc;
+  font-size: 10px;
+}
+.consultoria-etapa-detalhe svg {
+  color: var(--vermelho);
+}
+.consultoria-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 30px;
+  transition: color 0.2s;
+}
+.consultoria-link:hover {
+  color: var(--vermelho);
+}
+.consultoria-link > svg:last-child {
+  color: var(--vermelho);
+}
+.consultoria-aplicativo {
+  position: relative;
+  background: radial-gradient(ellipse at 72% 50%, #5e0e1229, transparent 65%);
+}
+.consultoria-aplicativo-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+.consultoria-aplicativo h2 {
+  font-size: 80px;
+}
+.consultoria-lista {
+  list-style: none;
+  padding: 0;
+  margin: 27px 0;
+  display: grid;
+  gap: 14px;
+}
+.consultoria-lista li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #bdbdbf;
+  font-size: 12px;
+}
+.consultoria-lista svg {
+  color: var(--vermelho);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.consultoria-aplicativo-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 620px;
+}
+.consultoria-órbita {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border: 1px solid #f1353e25;
+  border-radius: 50%;
+  z-index: -1;
+}
+.consultoria-órbita::after {
+  content: "";
+  position: absolute;
+  inset: -50px;
+  border: 1px dashed #f1353e18;
+  border-radius: 50%;
+  animation: consultoria-girar 90s linear infinite;
+}
+.consultoria-celular {
+  position: relative;
+  background: linear-gradient(145deg, #1c1b1c, #101010);
+  border: 6px solid #252525;
+  outline: 1px solid #ffffff29;
+  border-radius: 42px;
+  width: 292px;
+  padding: 40px 20px 15px;
+  box-shadow: 20px 28px 60px #000b;
+  transform: rotate(5deg);
+}
+.consultoria-celular-câmera {
+  position: absolute;
+  width: 85px;
+  height: 18px;
+  background: #050505;
+  border-radius: 0 0 12px 12px;
+  top: 0;
+  left: calc(50% - 42px);
+}
+.consultoria-celular-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.consultoria-celular-logo {
+  width: 138px;
+  max-width: calc(100% - 45px);
+  height: auto;
+  object-fit: contain;
+}
+.consultoria-avatar {
+  font-size: 9px;
+  background: #e7303930;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ee303950;
+  border-radius: 50%;
+}
+.consultoria-celular-saudação {
+  color: #888;
+  font-size: 7px;
+  letter-spacing: 1px;
+  margin: 30px 0 7px;
+}
+.consultoria-celular h3 {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 25px;
+}
+.consultoria-celular h3 > span {
+  color: var(--vermelho);
+}
+.consultoria-treino-app {
+  border: 1px solid #f1353e50;
+  background: linear-gradient(110deg, #89151a5c, #54131822);
+  padding: 16px;
+  border-radius: 12px;
+}
+.consultoria-mini-etiqueta {
+  font-size: 6px;
+  letter-spacing: 1.4px;
+  color: #ff7f86;
+}
+.consultoria-treino-app > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.consultoria-treino-app > div > svg {
+  color: #f35b62;
+  flex-shrink: 0;
+}
+.consultoria-treino-app strong {
+  font-size: 12px;
+}
+.consultoria-treino-app small {
+  display: block;
+  font-size: 7px;
+  color: #a7a7a7;
+  margin-top: 4px;
+  font-weight: 400;
+}
+.consultoria-treino-app > div > svg:last-child {
+  margin-left: auto;
+}
+.consultoria-progresso-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 15px;
+  font-size: 10px;
+}
+.consultoria-progresso-topo > span {
+  font-size: 6px;
+  letter-spacing: 1px;
+  color: #777;
+}
+.consultoria-dias {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.consultoria-dias > div {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+.consultoria-dias > div > span {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid #ffffff15;
+  display: grid;
+  place-items: center;
+}
+.consultoria-dias .concluído {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+}
+.consultoria-dias small {
+  font-size: 7px;
+  color: #888;
+}
+.consultoria-gráfico {
+  padding: 14px;
+  border: 1px solid #ffffff12;
+  background: #0002;
+  border-radius: 10px;
+}
+.consultoria-gráfico > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #888;
+}
+.consultoria-gráfico > div > svg {
+  color: var(--vermelho);
+}
+.consultoria-gráfico > svg {
+  margin-top: 12px;
+  width: 100%;
+}
+.consultoria-gráfico > p {
+  font-size: 7px;
+  color: #888;
+  margin: 5px 0 0;
+}
+.consultoria-app-base {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-top: 1px solid #ffffff15;
+  padding-top: 12px;
+}
+.consultoria-app-base > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 6px;
+  color: #888;
+}
+.consultoria-app-base > span:first-child {
+  color: var(--vermelho);
+}
+.consultoria-aplicativo-nota {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 1;
+  background: #1a1919;
+  box-shadow: 0 10px 25px #0005;
+  border: 1px solid var(--linha);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: consultoria-flutuar 5s ease-in-out infinite;
+}
+.consultoria-aplicativo-nota > span {
+  background: var(--vermelho);
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.consultoria-ilustração {
+  font-size: 9px;
+  color: #707073;
+  text-align: center;
+  margin: 28px 0 0;
+  position: relative;
+  z-index: 1;
+}
+.consultoria-mentor {
+  background: #111;
+  border-block: 1px solid #ffffff08;
+}
+.consultoria-mentor-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+.consultoria-mentor-fotos {
+  position: relative;
+  max-width: 500px;
+  padding: 0 30px 30px 0;
+}
+.consultoria-retrato-campeão {
+  height: auto;
+  aspect-ratio: 1069 / 1385;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--linha);
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 92% 100%, 0 100%);
+}
+.consultoria-retrato-campeão img {
+  width: 100%;
+  height: auto;
+}
+.consultoria-mentor-fotos::after {
+  content: "";
+  position: absolute;
+  inset: 30px 0 0 30px;
+  border-right: 1px solid #f1353e50;
+  border-bottom: 1px solid #f1353e50;
+  z-index: -1;
+}
+.consultoria-mentor-medalha {
+  position: absolute;
+  bottom: 70px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  background: #101010;
+  border-left: 3px solid var(--vermelho);
+  box-shadow: 0 15px 30px #0007;
+}
+.consultoria-mentor-medalha > svg {
+  color: var(--vermelho);
+}
+.consultoria-mentor-medalha span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #999;
+}
+.consultoria-mentor-medalha strong {
+  display: block;
+  font-size: 15px;
+  color: #eee;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+.consultoria-mentor-foto-texto {
+  font-size: 8px;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 17px;
+  color: #777;
+}
+.consultoria-mentor-nome {
+  color: #eee;
+  letter-spacing: 1px;
+  font-size: 27px;
+  margin: 30px 0 0 !important;
+}
+.consultoria-credenciais {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+.consultoria-credenciais > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #bcbcbc;
+}
+.consultoria-credenciais svg {
+  width: 15px;
+  height: 15px;
+  color: var(--vermelho);
+}
+.consultoria-bastidores-grade {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 100px;
+}
+.consultoria-melhores-amigos {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  background: #16351a66;
+  color: #94dba2;
+  border: 1px solid #94dba22a;
+  margin-bottom: 25px;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.consultoria-bastidores-tópicos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 30px;
+  padding-block: 20px;
+  border-block: 1px solid var(--linha);
+}
+.consultoria-bastidores-tópicos > span {
+  font-size: 10px;
+  color: #c4c4c4;
+}
+.consultoria-nota {
+  font-size: 10px;
+  color: #737376;
+  line-height: 1.9;
+  margin-top: 18px;
+  max-width: 420px;
+}
+.consultoria-bastidores-foto {
+  height: 570px;
+  position: relative;
+  margin-right: 24px;
+}
+.consultoria-bastidores-foto > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 62%;
+  clip-path: polygon(8% 0, 100% 0, 100% 94%, 92% 100%, 0 100%, 0 6%);
+}
+.consultoria-bastidores-selo {
+  position: absolute;
+  left: -35px;
+  bottom: 35px;
+  background: #101010ef;
+  border: 1px solid var(--linha);
+  padding: 19px 22px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 30px #0005;
+}
+.consultoria-bastidores-selo > span {
+  width: 5px;
+  height: 5px;
+  background: var(--vermelho);
+  display: inline-block;
+  margin-right: 6px;
+}
+.consultoria-bastidores-selo strong {
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  display: block;
+  margin-top: 6px;
+}
+.consultoria-bastidores-contorno {
+  position: absolute;
+  right: -38px;
+  top: 25px;
+  writing-mode: vertical-rl;
+  font-size: 70px;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff38;
+  letter-spacing: 2px;
+}
+.consultoria-planos {
+  background:
+    radial-gradient(ellipse at 50% 0, #57101520, transparent 60%), #101010;
+  border-block: 1px solid var(--linha);
+}
+.consultoria-planos-título {
+  text-align: center;
+}
+.consultoria-planos-título .consultoria-etiqueta {
+  justify-content: center;
+}
+.consultoria-planos-título > p:last-child {
+  color: #999;
+  font-size: 13px;
+  margin-top: 25px;
+}
+.consultoria-comum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin: 35px 0 48px;
+  font-size: 11px;
+  color: #aaa;
+}
+.consultoria-comum > svg {
+  color: var(--vermelho);
+  flex-shrink: 0;
+}
+.consultoria-planos-grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: stretch;
+}
+.consultoria-plano {
+  position: relative;
+  padding: 29px 22px 22px;
+  background: #131313;
+  border: 1px solid #ffffff1b;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.consultoria-plano.selecionado {
+  border-color: #f1353e88;
+  background: #191313;
+}
+.consultoria-plano-anual {
+  background: linear-gradient(150deg, #3f1517, #171112 60%);
+  border-color: var(--vermelho);
+}
+.consultoria-plano-destaque {
+  position: absolute;
+  bottom: 100%;
+  left: -1px;
+  right: -1px;
+  background: var(--vermelho);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 6px;
+  letter-spacing: 0.3px;
+  min-height: 28px;
+  padding: 5px;
+  white-space: nowrap;
+}
+.consultoria-plano-cabeça {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.consultoria-plano-cabeça > svg {
+  color: var(--vermelho);
+}
+.consultoria-plano-cabeça > span {
+  border: 1px solid var(--linha);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+}
+.consultoria-plano h3 {
+  font-family: "Barlow Consultoria";
+  font-size: 34px;
+  margin: 23px 0 2px;
+  line-height: 1;
+}
+.consultoria-plano-frase {
+  font-size: 10px;
+  color: #929292;
+  line-height: 1.7;
+  min-height: 34px;
+  margin: 12px 0 21px;
+}
+.consultoria-preço {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  line-height: 1;
+}
+.consultoria-preço > span {
+  font-size: 14px;
+  color: #bbb;
+}
+.consultoria-preço > span:last-child {
+  font-size: 13px;
+  margin-left: -4px;
+}
+.consultoria-preço > strong {
+  font-family: "Barlow Consultoria";
+  font-size: 55px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.consultoria-plano-período {
+  font-size: 9px;
+  color: #777;
+  margin: 8px 0 0;
+}
+.consultoria-equivalente {
+  font-size: 9px;
+  color: #bbb;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 22px;
+  margin-top: 13px;
+}
+.consultoria-plano .consultoria-lista {
+  gap: 13px;
+  margin: 24px 0;
+}
+.consultoria-plano .consultoria-lista > li {
+  font-size: 10px;
+  gap: 6px;
+}
+.consultoria-plano .consultoria-lista svg {
+  width: 12px;
+  height: 12px;
+}
+.consultoria-plano-bônus {
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  color: #ccc;
+  min-height: 28px;
+}
+.consultoria-plano-bônus > svg {
+  color: var(--vermelho);
+}
+.consultoria-plano .consultoria-botão {
+  width: 100%;
+  font-size: 10px;
+  min-height: 45px;
+  padding: 13px;
+  justify-content: space-between;
+  gap: 10px;
+}
+.consultoria-planos-observação {
+  font-size: 10px;
+  color: #777;
+  text-align: center;
+  line-height: 2;
+  margin: 28px 0 0;
+}
+.consultoria-bônus-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+.consultoria-presente-visual {
+  position: relative;
+  isolation: isolate;
+}
+.consultoria-presente-visual > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  position: relative;
+}
+.consultoria-presente-fundo {
+  position: absolute;
+  top: 18%;
+  left: -10px;
+  right: 0;
+  font-size: 170px;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff10;
+  z-index: -1;
+  transform: rotate(-12deg);
+}
+.consultoria-presente-selo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  padding: 17px 24px;
+  border-left: 3px solid var(--vermelho);
+  background: #151515e8;
+  box-shadow: 0 15px 40px #0008;
+}
+.consultoria-presente-selo > svg {
+  color: var(--vermelho);
+}
+.consultoria-presente-selo span {
+  font-size: 7px;
+  letter-spacing: 1.6px;
+  color: #aaa;
+}
+.consultoria-presente-selo strong {
+  display: block;
+  font: 25px "Barlow Consultoria";
+  letter-spacing: 0.5px;
+  color: #eee;
+}
+.consultoria-presente-visual .consultoria-ilustração {
+  margin: 0;
+}
+.consultoria-bônus .consultoria-botão {
+  margin-top: 25px;
+}
+.consultoria-bônus-presencial {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-top: 1px solid var(--linha);
+  padding-top: 30px;
+  margin-top: 38px;
+}
+.consultoria-bônus-presencial > svg {
+  color: var(--vermelho);
+  flex-shrink: 0;
+}
+.consultoria-bônus-presencial span {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #777;
+}
+.consultoria-bônus-presencial h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 7px 0 10px;
+}
+.consultoria-bônus-presencial p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #999;
+  margin: 0;
+}
+.consultoria-bônus-presencial a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  margin-top: 14px;
+}
+.consultoria-bônus-presencial a svg {
+  color: var(--vermelho);
+}
+.consultoria-perguntas {
+  background: #101010;
+  border-top: 1px solid var(--linha);
+}
+.consultoria-perguntas-grade {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+}
+.consultoria-perguntas .consultoria-botão {
+  margin-top: 30px;
+}
+.consultoria-perguntas details {
+  border-bottom: 1px solid var(--linha);
+}
+.consultoria-perguntas details:first-child {
+  border-top: 1px solid var(--linha);
+}
+.consultoria-perguntas summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 23px 0;
+  cursor: pointer;
+}
+.consultoria-perguntas summary::-webkit-details-marker {
+  display: none;
+}
+.consultoria-perguntas summary > svg {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  color: #888;
+}
+.consultoria-perguntas details[open] summary > svg {
+  transform: rotate(180deg);
+  color: var(--vermelho);
+}
+.consultoria-perguntas details > p {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0 25px 25px 0;
+}
+.consultoria-chamada-final {
+  position: relative;
+  padding: 100px 0;
+  background: radial-gradient(ellipse at 50% 100%, #93121a36, transparent 80%);
+  text-align: center;
+  border-bottom: 1px solid var(--linha);
+}
+.consultoria-chamada-final .consultoria-etiqueta {
+  justify-content: center;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.consultoria-chamada-final h2 {
+  font-size: clamp(48px, 6vw, 88px);
+}
+.consultoria-chamada-final .consultoria-botão {
+  margin-top: 35px;
+}
+.consultoria-chamada-final > .consultoria-contêiner > p:last-child {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #777;
+  margin-top: 26px;
+}
+.consultoria-rodapé {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-block: 35px;
+}
+.consultoria-rodapé > a > img {
+  width: 120px;
+  height: 75px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+.consultoria-rodapé > p {
+  font-size: 10px;
+  color: #bbb;
+  text-align: center;
+  line-height: 2;
+}
+.consultoria-rodapé > p > span {
+  color: #666;
+  font-size: 9px;
+}
+.consultoria-rodapé > p a {
+  color: #aaa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.consultoria-rodapé > p a:hover {
+  color: var(--vermelho);
+}
+.consultoria-rodapé > div {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: #888;
+  font-size: 9px;
+}
+.consultoria-rodapé > div a:hover {
+  color: var(--vermelho);
+}
+.consultoria-whatsapp {
+  position: fixed;
+  z-index: 40;
+  bottom: max(25px, env(safe-area-inset-bottom));
+  right: 25px;
+  width: 57px;
+  height: 57px;
+  background: #22ba63;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 6px 30px #0009;
+  transition: transform 0.3s;
+}
+.consultoria-whatsapp:hover {
+  transform: translateY(-4px);
+}
+.consultoria-whatsapp > span {
+  position: absolute;
+  right: 70px;
+  background: #1b1b1b;
+  border: 1px solid var(--linha);
+  padding: 9px 14px;
+  white-space: nowrap;
+  font-size: 10px;
+  opacity: 0;
+  transform: translateX(8px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  pointer-events: none;
+}
+.consultoria-whatsapp:is(:hover, :focus-visible) > span {
+  opacity: 1;
+  transform: translateX(0);
+}
+@keyframes consultoria-deslizar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes consultoria-pulso {
+  50% {
+    box-shadow: 0 0 0 6px #f1353e09;
+  }
+}
+@keyframes consultoria-flutuar {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes consultoria-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 1600px) {
+  .consultoria-hero {
+    min-height: 960px;
+  }
+  .consultoria-hero-imagem {
+    left: 44%;
+  }
+  .consultoria-hero-imagem > img {
+    object-position: 50% 46%;
+  }
+}
+@media (max-width: 1150px) {
+  .consultoria-contêiner {
+    width: calc(100% - 72px);
+  }
+  .consultoria-navegação {
+    gap: 20px;
+  }
+  .consultoria-navegação nav {
+    gap: 20px;
+  }
+  .consultoria-marca > span {
+    display: none;
+  }
+  .consultoria-título-dividido {
+    gap: 45px;
+  }
+  .consultoria-processo-grade,
+  .consultoria-aplicativo-grade,
+  .consultoria-mentor-grade,
+  .consultoria-bastidores-grade,
+  .consultoria-perguntas-grade {
+    gap: 50px;
+  }
+  .consultoria-plano {
+    padding: 25px 16px 18px;
+  }
+  .consultoria-plano .consultoria-lista > li {
+    font-size: 9px;
+  }
+  .consultoria-preço > strong {
+    font-size: 49px;
+  }
+  .consultoria-hero-assinatura {
+    right: 4%;
+  }
+  .consultoria-hero h1 {
+    font-size: 100px;
+  }
+  .consultoria-hero-imagem {
+    left: 35%;
+  }
+  .consultoria-aplicativo-nota {
+    right: -10px;
+    font-size: 7px;
+    padding: 12px;
+  }
+  .consultoria-presente-fundo {
+    font-size: 130px;
+  }
+  .consultoria-bônus-grade {
+    gap: 45px;
+  }
+}
+@media (max-width: 900px) {
+  .consultoria-navegação {
+    min-height: 85px;
+  }
+  .consultoria-navegação nav {
+    display: none;
+  }
+  .consultoria-menu-botão {
+    display: block;
+    order: -1;
+  }
+  .consultoria-marca {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .consultoria-marca img {
+    width: 105px;
+    height: 70px;
+  }
+  .consultoria-entrar {
+    font-size: 10px;
+    margin-left: auto;
+    padding: 9px 12px;
+    gap: 10px;
+  }
+  .consultoria-hero {
+    min-height: 790px;
+    padding-top: 130px;
+  }
+  .consultoria-hero h1 {
+    font-size: 89px;
+  }
+  .consultoria-hero-imagem {
+    left: 27%;
+    opacity: 0.7;
+  }
+  .consultoria-hero-imagem-sombra {
+    background:
+      linear-gradient(
+        90deg,
+        #090909 0%,
+        #090909cc 20%,
+        #09090925 75%,
+        #09090999
+      ),
+      linear-gradient(
+        0deg,
+        #090909,
+        transparent 40%,
+        transparent 80%,
+        #09090977
+      );
+  }
+  .consultoria-hero-assinatura {
+    bottom: 90px;
+  }
+  .consultoria-hero-assinatura strong {
+    font-size: 30px;
+  }
+  .consultoria-hero-assinatura > span {
+    display: none;
+  }
+  .consultoria-seção {
+    padding-block: 80px;
+  }
+  .consultoria-título-dividido {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .consultoria-título-dividido > p {
+    max-width: 520px;
+    margin-top: 7px;
+  }
+  .consultoria-benefício {
+    padding: 27px 20px 27px 0;
+  }
+  .consultoria-benefício + div {
+    padding-left: 20px;
+  }
+  .consultoria-benefício h3 {
+    font-size: 17px;
+  }
+  .consultoria-benefício p {
+    font-size: 11px;
+  }
+  .consultoria-processo-grade {
+    gap: 35px;
+    grid-template-columns: 0.85fr 1fr;
+  }
+  .consultoria-processo-foto {
+    height: 540px;
+  }
+  .consultoria-etapa strong {
+    font-size: 16px;
+  }
+  .consultoria-etapa > button {
+    gap: 14px;
+  }
+  .consultoria-etapa > div {
+    padding-left: 40px;
+  }
+  .consultoria-aplicativo-grade {
+    gap: 30px;
+  }
+  .consultoria-aplicativo h2 {
+    font-size: 64px;
+  }
+  .consultoria-celular {
+    width: 265px;
+    padding-inline: 16px;
+  }
+  .consultoria-aplicativo-nota {
+    top: 65px;
+    right: -10px;
+  }
+  .consultoria-órbita {
+    width: 350px;
+    height: 350px;
+  }
+  .consultoria-mentor-grade {
+    gap: 40px;
+  }
+  .consultoria-mentor-fotos {
+    padding: 0 10px 25px 0;
+  }
+  .consultoria-mentor-medalha {
+    right: -20px;
+    padding: 15px 18px;
+  }
+  .consultoria-mentor-medalha strong {
+    font-size: 12px;
+  }
+  .consultoria-mentor .consultoria-texto {
+    font-size: 12px;
+  }
+  .consultoria-bastidores-grade {
+    gap: 45px;
+  }
+  .consultoria-bastidores-tópicos {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .consultoria-bastidores-foto {
+    height: 570px;
+    margin-right: 0;
+  }
+  .consultoria-planos-grade {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+  .consultoria-plano {
+    padding: 27px;
+  }
+  .consultoria-plano .consultoria-lista > li {
+    font-size: 11px;
+  }
+  .consultoria-plano-destaque {
+    font-size: 7px;
+  }
+  .consultoria-plano-anual {
+    margin-top: 0;
+  }
+  .consultoria-planos-grade > div:nth-child(3) {
+    margin-top: 0;
+  }
+  .consultoria-planos-observação {
+    margin-top: 30px;
+  }
+  .consultoria-bônus-grade {
+    gap: 35px;
+  }
+  .consultoria-bônus .consultoria-texto {
+    font-size: 12px;
+  }
+  .consultoria-presente-selo {
+    left: 0;
+    bottom: 50px;
+    padding: 13px 17px;
+  }
+  .consultoria-presente-fundo {
+    font-size: 100px;
+  }
+  .consultoria-perguntas-grade {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+  }
+  .consultoria-rodapé {
+    gap: 20px;
+  }
+  .consultoria-rodapé > div {
+    gap: 15px;
+  }
+}
+@media (max-width: 640px) {
+  .consultoria-contêiner {
+    width: calc(100% - 40px);
+  }
+  .consultoria-seção {
+    padding-block: 68px;
+  }
+  .consultoria-navegação {
+    min-height: 78px;
+  }
+  .consultoria-navegação .consultoria-menu-botão {
+    margin-left: -9px;
+  }
+  .consultoria-marca img {
+    width: 94px;
+    height: 63px;
+  }
+  .consultoria-entrar {
+    font-size: 8px;
+    padding: 9px;
+    gap: 5px;
+  }
+  .consultoria-entrar > svg {
+    width: 12px;
+  }
+  .consultoria-hero {
+    min-height: 850px;
+    padding: 370px 0 76px;
+    align-items: flex-end;
+  }
+  .consultoria-hero-imagem {
+    inset: 50px -30px 240px 0;
+    opacity: 1;
+  }
+  .consultoria-hero-imagem > img {
+    object-position: 44% 39%;
+    width: 100%;
+    height: 100%;
+  }
+  .consultoria-hero-imagem-sombra {
+    background:
+      linear-gradient(
+        0deg,
+        #090909 0%,
+        #090909eb 13%,
+        #09090965 33%,
+        transparent 60%,
+        #09090935 90%,
+        #09090999
+      ),
+      linear-gradient(90deg, #09090955, transparent 40%, #09090966);
+  }
+  .consultoria-hero-etiqueta {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+    margin-bottom: 17px;
+  }
+  .consultoria-hero h1 {
+    font-size: clamp(61px, 15.8vw, 94px);
+    line-height: 0.96;
+    letter-spacing: -0.7px;
+  }
+  .consultoria-hero-descrição {
+    font-size: 12px;
+    margin: 20px 0 23px;
+    line-height: 1.8;
+  }
+  .consultoria-hero-ações {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .consultoria-botão {
+    font-size: 10px;
+    padding: 15px 18px;
+    gap: 16px;
+    min-height: 49px;
+  }
+  .consultoria-hero-como {
+    font-size: 10px;
+    gap: 7px;
+  }
+  .consultoria-hero-como > span {
+    width: 28px;
+    height: 28px;
+  }
+  .consultoria-hero-como svg {
+    width: 14px;
+  }
+  .consultoria-hero-base {
+    margin-top: 27px;
+    gap: 11px;
+  }
+  .consultoria-hero-base > svg {
+    width: 23px;
+  }
+  .consultoria-hero-base strong {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .consultoria-hero-base span {
+    font-size: 9px;
+  }
+  .consultoria-hero-assinatura {
+    top: 290px;
+    right: 25px;
+    bottom: auto;
+  }
+  .consultoria-hero-assinatura strong {
+    font-size: 27px;
+  }
+  .consultoria-hero-assinatura strong > span {
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+  .consultoria-rolar {
+    display: none;
+  }
+  .consultoria-faixa {
+    padding: 11px 0;
+  }
+  .consultoria-faixa span {
+    font-size: 20px;
+    gap: 22px;
+    padding-right: 22px;
+  }
+  .consultoria-faixa svg {
+    width: 15px;
+  }
+  .consultoria-etiqueta {
+    font-size: 7px;
+    letter-spacing: 1.6px;
+    gap: 8px;
+    margin-bottom: 21px;
+  }
+  .página-consultoria h2 {
+    font-size: clamp(39px, 10.6vw, 58px);
+    letter-spacing: -0.7px;
+  }
+  .consultoria-título-dividido {
+    gap: 12px;
+  }
+  .consultoria-título-dividido > p,
+  .consultoria-texto {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+  .consultoria-benefícios {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+  .consultoria-benefício {
+    padding: 25px 0;
+  }
+  .consultoria-benefício + div {
+    padding: 25px 0;
+    border-left: 0;
+    border-top: 1px solid var(--linha);
+  }
+  .consultoria-benefício > div {
+    margin-bottom: 12px;
+  }
+  .consultoria-benefício > div > span {
+    font-size: 36px;
+  }
+  .consultoria-benefício > div > svg {
+    width: 24px;
+  }
+  .consultoria-benefício h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .consultoria-benefício p {
+    font-size: 12px;
+    max-width: 100%;
+  }
+  .consultoria-processo-grade {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 30px;
+  }
+  .consultoria-processo-foto {
+    height: 410px;
+  }
+  .consultoria-processo-foto > img {
+    object-position: 50% 61%;
+  }
+  .consultoria-foto-legenda {
+    bottom: 24px;
+    left: 22px;
+  }
+  .consultoria-foto-legenda > strong {
+    font-size: 32px;
+  }
+  .consultoria-selo-foto {
+    top: 16px;
+    left: 16px;
+    font-size: 7px;
+  }
+  .consultoria-etapa > button {
+    padding: 22px 0;
+  }
+  .consultoria-etapa strong {
+    font-size: 18px;
+  }
+  .consultoria-etapa small {
+    font-size: 8px;
+  }
+  .consultoria-etapa > div > p {
+    font-size: 12px;
+  }
+  .consultoria-etapa-detalhe {
+    font-size: 9px;
+  }
+  .consultoria-aplicativo-grade {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .consultoria-aplicativo h2 {
+    font-size: 62px;
+  }
+  .consultoria-aplicativo .consultoria-texto {
+    max-width: 420px;
+  }
+  .consultoria-aplicativo-visual {
+    min-height: 590px;
+    margin-top: 5px;
+  }
+  .consultoria-celular {
+    width: 275px;
+  }
+  .consultoria-aplicativo-nota {
+    right: 0;
+    top: 75px;
+  }
+  .consultoria-órbita {
+    width: 300px;
+    height: 300px;
+  }
+  .consultoria-órbita::after {
+    inset: -22px;
+  }
+  .consultoria-mentor-grade {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .consultoria-mentor-fotos {
+    max-width: 430px;
+    width: 100%;
+    margin: auto;
+    padding-right: 20px;
+  }
+  .consultoria-mentor-medalha {
+    bottom: 65px;
+    right: 0;
+  }
+  .consultoria-mentor-medalha strong {
+    font-size: 14px;
+  }
+  .consultoria-mentor-nome {
+    font-size: 25px;
+    margin-top: 25px !important;
+  }
+  .consultoria-bastidores-grade {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .consultoria-bastidores-tópicos {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 10px;
+  }
+  .consultoria-bastidores-tópicos > span {
+    font-size: 9px;
+  }
+  .consultoria-bastidores-foto {
+    height: 470px;
+    width: calc(100% - 22px);
+    margin-right: auto;
+  }
+  .consultoria-bastidores-selo {
+    left: 16px;
+    bottom: 25px;
+  }
+  .consultoria-bastidores-contorno {
+    font-size: 58px;
+    right: -31px;
+  }
+  .consultoria-melhores-amigos {
+    font-size: 7px;
+    padding: 8px 10px;
+    gap: 7px;
+  }
+  .consultoria-comum {
+    font-size: 9px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+    margin: 26px auto 42px;
+    max-width: 320px;
+  }
+  .consultoria-comum > svg {
+    width: 17px;
+  }
+  .consultoria-planos-título > p:last-child {
+    font-size: 12px;
+  }
+  .consultoria-planos-grade {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .consultoria-plano {
+    padding: 27px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 15px;
+  }
+  .consultoria-plano-cabeça {
+    grid-column: 1/-1;
+  }
+  .consultoria-plano h3 {
+    grid-column: 1;
+    margin-top: 20px;
+  }
+  .consultoria-plano-frase {
+    grid-column: 1;
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .consultoria-preço {
+    grid-column: 2;
+    grid-row: 2/4;
+    align-self: center;
+    justify-content: flex-end;
+  }
+  .consultoria-preço > strong {
+    font-size: 53px;
+  }
+  .consultoria-plano-período {
+    grid-column: 2;
+    grid-row: 4;
+    text-align: right;
+    font-size: 8px;
+    margin: 0;
+  }
+  .consultoria-equivalente {
+    grid-column: 1;
+    grid-row: 4;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 8px;
+  }
+  .consultoria-plano .consultoria-lista {
+    grid-column: 1/-1;
+    padding-top: 22px;
+    border-top: 1px solid var(--linha);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px 8px;
+    margin: 22px 0;
+  }
+  .consultoria-plano .consultoria-lista > li {
+    font-size: 9px;
+  }
+  .consultoria-plano-bônus {
+    grid-column: 1/-1;
+    margin-bottom: 16px;
+  }
+  .consultoria-plano .consultoria-botão {
+    grid-column: 1/-1;
+    font-size: 11px;
+  }
+  .consultoria-plano-anual {
+    margin-top: 24px;
+  }
+  .consultoria-plano-destaque {
+    font-size: 7px;
+    min-height: 28px;
+  }
+  .consultoria-planos-observação {
+    font-size: 9px;
+    text-align: left;
+    line-height: 1.9;
+  }
+  .consultoria-bônus-grade {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .consultoria-presente-visual {
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+  .consultoria-presente-fundo {
+    font-size: 145px;
+  }
+  .consultoria-presente-selo {
+    bottom: 40px;
+    left: 15px;
+  }
+  .consultoria-bônus-presencial {
+    gap: 15px;
+    padding-top: 25px;
+    margin-top: 30px;
+  }
+  .consultoria-bônus-presencial h3 {
+    font-size: 19px;
+  }
+  .consultoria-perguntas-grade {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .consultoria-perguntas summary {
+    font-size: 12px;
+    padding-block: 20px;
+  }
+  .consultoria-perguntas details > p {
+    font-size: 11px;
+    padding-right: 10px;
+  }
+  .consultoria-chamada-final {
+    padding: 70px 0;
+  }
+  .consultoria-chamada-final h2 {
+    font-size: clamp(36px, 9.7vw, 59px);
+  }
+  .consultoria-chamada-final .consultoria-etiqueta {
+    font-size: 6px;
+    letter-spacing: 1.2px;
+  }
+  .consultoria-chamada-final > .consultoria-contêiner > p:last-child {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .consultoria-chamada-final .consultoria-botão {
+    margin-top: 28px;
+  }
+  .consultoria-rodapé {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-block: 25px 85px;
+  }
+  .consultoria-rodapé > a > img {
+    width: 100px;
+    height: 65px;
+  }
+  .consultoria-rodapé > p {
+    font-size: 9px;
+  }
+  .consultoria-rodapé > div {
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+  }
+  .consultoria-whatsapp {
+    width: 51px;
+    height: 51px;
+    right: 17px;
+    bottom: max(17px, env(safe-area-inset-bottom));
+  }
+  .consultoria-whatsapp > svg {
+    width: 24px;
+  }
+  .consultoria-ilustração {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.página-consultoria) {
+    scroll-behavior: auto;
+  }
+  .página-consultoria *,
+  .página-consultoria *::before,
+  .página-consultoria *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .consultoria-celular {
+    transform: none;
+  }
+  .consultoria-progresso {
+    display: none;
+  }
+}
+
+/* Evita que o conteúdo mínimo dos cartões ultrapasse aparelhos de 320 px. */
+@media (max-width: 380px) {
+  .consultoria-planos-grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .consultoria-plano {
+    min-width: 0;
+    padding: 24px 18px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 10px;
+  }
+  .consultoria-plano h3 {
+    font-size: 28px;
+  }
+  .consultoria-preço > strong {
+    font-size: 40px;
+  }
+  .consultoria-preço > span {
+    font-size: 10px;
+  }
+  .consultoria-plano .consultoria-lista {
+    grid-template-columns: 1fr;
+  }
+  .consultoria-plano .consultoria-lista > li {
+    font-size: 10px;
+  }
+  .consultoria-plano-frase {
+    font-size: 9px;
+  }
+  .consultoria-equivalente {
+    font-size: 7px;
+  }
+  .consultoria-plano-destaque {
+    font-size: 5.5px;
+    letter-spacing: 0;
+    gap: 3px;
+  }
+  .consultoria-celular {
+    max-width: calc(100% - 12px);
+  }
+}
+
+/* Conecta as três frentes de acompanhamento sem repetir a grade de planos. */
+.consultoria-acompanhamento {
+  background:
+    radial-gradient(ellipse at 50% 12%, #6e141b30, transparent 68%), #0d0b0c;
+  border-block: 1px solid #ef353e24;
+  position: relative;
+}
+.consultoria-acompanhamento-abertura {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  align-items: end;
+  gap: 70px;
+}
+.consultoria-acompanhamento-abertura > p {
+  margin: 0;
+  max-width: 370px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.95;
+}
+.consultoria-acompanhamento-frentes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 60px;
+  border-top: 1px solid #f1353e55;
+  border-bottom: 1px solid var(--linha);
+}
+.consultoria-acompanhamento-frente {
+  padding: 35px 28px 35px 0;
+  position: relative;
+  min-width: 0;
+  transition: background 0.3s;
+}
+.consultoria-acompanhamento-frente + .consultoria-acompanhamento-frente {
+  padding-left: 28px;
+  border-left: 1px solid var(--linha);
+}
+.consultoria-acompanhamento-frente:nth-child(2) {
+  background: linear-gradient(180deg, #f1353e0d, transparent);
+}
+.consultoria-acompanhamento-frente::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--vermelho);
+  transition: width 0.4s;
+}
+.consultoria-acompanhamento-frente:hover::before {
+  width: 100%;
+}
+.consultoria-acompanhamento-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.consultoria-acompanhamento-topo > span {
+  font:
+    64px/0.9 "Barlow Consultoria",
+    sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff35;
+}
+.consultoria-acompanhamento-topo > svg {
+  color: var(--vermelho);
+}
+.consultoria-acompanhamento-etiqueta {
+  color: #b07275;
+  letter-spacing: 1.6px;
+  font-size: 7px;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.consultoria-acompanhamento-frente > h3 {
+  font:
+    800 clamp(29px, 2.8vw, 40px)/1.1 "Barlow Consultoria",
+    sans-serif;
+  margin: 0;
+}
+.consultoria-acompanhamento-chamada {
+  color: #d6d1d2;
+  font-size: 11px;
+  margin: 12px 0 18px;
+}
+.consultoria-acompanhamento-descrição {
+  font-size: 12px;
+  line-height: 1.95;
+  color: #999;
+  min-height: 120px;
+  margin: 0;
+}
+.consultoria-acompanhamento-frente ul {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 22px 0 0;
+  border-top: 1px solid var(--linha);
+  display: grid;
+  gap: 12px;
+}
+.consultoria-acompanhamento-frente li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: #bdb5b7;
+}
+.consultoria-acompanhamento-frente li > svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: var(--vermelho);
+}
+.consultoria-acompanhamento-faixa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-top: 32px;
+}
+.consultoria-acompanhamento-presença {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.consultoria-acompanhamento-presença > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--vermelho);
+  box-shadow: 0 0 0 5px #f1353e12;
+  animation: consultoria-pulso 3s infinite;
+  flex-shrink: 0;
+}
+.consultoria-acompanhamento-presença strong {
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+.consultoria-acompanhamento-presença p {
+  font-size: 11px;
+  color: #888;
+  margin: 6px 0 0;
+}
+.consultoria-plano h3 {
+  min-height: 64px;
+  font-size: 30px;
+  line-height: 1.08;
+}
+@media (max-width: 900px) {
+  .consultoria-acompanhamento-abertura {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .consultoria-acompanhamento-abertura > p {
+    max-width: 540px;
+  }
+  .consultoria-acompanhamento-frente {
+    padding-right: 20px;
+  }
+  .consultoria-acompanhamento-frente + .consultoria-acompanhamento-frente {
+    padding-left: 20px;
+  }
+  .consultoria-acompanhamento-descrição {
+    min-height: 190px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 640px) {
+  .consultoria-acompanhamento-frentes {
+    grid-template-columns: 1fr;
+    margin-top: 35px;
+  }
+  .consultoria-acompanhamento-frente,
+  .consultoria-acompanhamento-frente + .consultoria-acompanhamento-frente {
+    padding: 30px 0;
+    border-left: 0;
+  }
+  .consultoria-acompanhamento-frente + .consultoria-acompanhamento-frente {
+    border-top: 1px solid var(--linha);
+  }
+  .consultoria-acompanhamento-frente:nth-child(2) {
+    background: none;
+  }
+  .consultoria-acompanhamento-topo {
+    margin-bottom: 23px;
+  }
+  .consultoria-acompanhamento-topo > span {
+    font-size: 48px;
+  }
+  .consultoria-acompanhamento-frente > h3 {
+    font-size: 36px;
+  }
+  .consultoria-acompanhamento-descrição {
+    min-height: 0;
+    font-size: 12px;
+  }
+  .consultoria-acompanhamento-frente li {
+    font-size: 11px;
+  }
+  .consultoria-acompanhamento-faixa {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .consultoria-acompanhamento-faixa > a {
+    width: 100%;
+  }
+  .consultoria-plano h3 {
+    min-height: 60px;
+    font-size: 29px;
+  }
+}
+@media (max-width: 380px) {
+  .consultoria-plano h3 {
+    font-size: 26px;
+  }
+}
