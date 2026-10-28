@@ -376,7 +376,11 @@
   font-size: 6px;
   letter-spacing: 1.2px;
 }
-.bio-proclub > img {
+.bio-proclub > a {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.bio-proclub > a > img {
   width: 88px;
   height: auto;
   opacity: 0.85;

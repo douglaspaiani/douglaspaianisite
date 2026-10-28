@@ -20,7 +20,6 @@ import {
   HeartPulse,
   Instagram,
   Menu,
-  MessageCircle,
   Plus,
   ShieldCheck,
   Shirt,
@@ -32,18 +31,19 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import { IconeWhatsappOficial } from "../components/WhatsappFlutuante";
 import "./consultoria.css";
 
 const endereçoPágina = "https://douglaspaiani.com.br/consultoria";
 const títuloPágina =
   "Consultoria Esportiva Online | Douglas Paiani - Paiani Team";
 const descriçãoPágina =
-  "Consultoria esportiva online com Douglas Paiani, campeão Men’s Physique. Treinos individualizados, acompanhamento pelo ProClub e planos a partir de R$ 149.";
+  "Consultoria esportiva online com Douglas Paiani, campeão Men’s Physique. Treinos individualizados, acompanhamento pelo ProClub e planos a partir de R$ 149,90.";
 const planos = [
   {
     nome: "Start",
     período: "1 mês",
-    preço: 149,
+    preço: 149.9,
     meses: 1,
     frase: "O primeiro passo para sair do lugar.",
     bônus: "Seu ponto de partida",
@@ -52,7 +52,7 @@ const planos = [
   {
     nome: "Evolução",
     período: "3 meses",
-    preço: 399,
+    preço: 399.9,
     meses: 3,
     frase: "Tempo para construir uma nova rotina.",
     bônus: "Constância que transforma",
@@ -61,7 +61,7 @@ const planos = [
   {
     nome: "Performance",
     período: "6 meses",
-    preço: 789,
+    preço: 789.9,
     meses: 6,
     frase: "Mais compromisso. Mais direção.",
     bônus: "Bônus: 1 treino presencial*",
@@ -70,7 +70,7 @@ const planos = [
   {
     nome: "Elite",
     período: "1 ano",
-    preço: 1499,
+    preço: 1499.9,
     meses: 12,
     frase: "Um ano inteiro para ir além.",
     bônus: "Bônus: camiseta do time",
@@ -152,8 +152,7 @@ const perguntas = [
   },
   {
     pergunta: "O valor é mensal ou pelo período completo?",
-    resposta:
-      "Os valores exibidos são pelo período completo: 1 mês por R$ 149, 3 meses por R$ 399, 6 meses por R$ 789 e 1 ano por R$ 1.499. O equivalente mensal é apenas uma comparação. As condições de pagamento são alinhadas pelo WhatsApp antes da contratação.",
+    resposta: `Os valores exibidos são pelo período completo: ${planos.map((plano) => `${plano.período} por R$ ${formatarPreço(plano.preço)}`).join(", ")}. O equivalente mensal é apenas uma comparação. As condições de pagamento são alinhadas pelo WhatsApp antes da contratação.`,
   },
   {
     pergunta: "Como funciona o treino presencial do plano de 6 meses?",
@@ -751,8 +750,8 @@ function PlanosConsultoria() {
               <p className="consultoria-plano-frase">{plano.frase}</p>
               <div className="consultoria-preço">
                 <span>R$</span>
-                <strong>{plano.preço.toLocaleString("pt-BR")}</strong>
-                <span>,00</span>
+                <strong>{formatarPreço(plano.preço).split(",")[0]}</strong>
+                <span>,{formatarPreço(plano.preço).split(",")[1]}</span>
               </div>
               <p className="consultoria-plano-período">
                 valor total por {plano.período}
@@ -1175,7 +1174,9 @@ export default function Consultoria() {
                   camiseta personalizada do Paiani Team. Para levar o
                   compromisso com o time também para os seus treinos.
                 </p>
-                <BotãoContato plano="Elite — 1 ano por R$ 1.499,00">
+                <BotãoContato
+                  plano={`Elite — 1 ano por R$ ${formatarPreço(planos[3].preço)}`}
+                >
                   Quero meu ano no time
                 </BotãoContato>
                 <div className="consultoria-bônus-presencial">
@@ -1303,7 +1304,7 @@ export default function Consultoria() {
           aria-label="Conversar com Douglas Paiani no WhatsApp (abre em nova aba)"
         >
           <span>Vamos conversar?</span>
-          <MessageCircle size={26} aria-hidden="true" />
+          <IconeWhatsappOficial tamanho={26} />
         </a>
       </div>
     </MotionConfig>

@@ -208,13 +208,20 @@ export default function BioConsultoria() {
 
           <div className="bio-proclub">
             <span>SUA EVOLUÇÃO CONECTADA AO</span>
-            <img
-              src="/consultoria/proclub-logo.png"
-              alt="ProClub"
-              width="478"
-              height="160"
-              loading="lazy"
-            />
+            <a
+              href="https://proclub.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Conheça o ProClub (abre em nova aba)"
+            >
+              <img
+                src="/consultoria/proclub-logo.png"
+                alt="ProClub"
+                width="478"
+                height="160"
+                loading="lazy"
+              />
+            </a>
           </div>
           <footer className="bio-rodapé">
             <p>PAIANI TEAM · O COMPROMISSO É SEU. A JORNADA É NOSSA.</p>
